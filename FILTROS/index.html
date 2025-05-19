@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Online</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Filtro y Buscador -->
+    <aside class="filters">
+      <input type="text" id="search" placeholder="Buscar productos...">
+      
+      <!-- Filtros de categoría como checkboxes -->
+      <div class="filter">
+        <label>Categorías:</label>
+        <label><input type="checkbox" class="category-filter" value="electronics"> Electrónica</label>
+        <label><input type="checkbox" class="category-filter" value="clothing"> Ropa</label>
+        <label><input type="checkbox" class="category-filter" value="home"> Hogar</label>
+      </div>
+    </aside>
+
+    <!-- Grid de productos -->
+    <main class="products-grid">
+      <div class="product" data-category="electronics">
+        <img src="https://via.placeholder.com/200" alt="Producto 1">
+        <h3>Producto 1 - Electrónica</h3>
+        <p>$500</p>
+      </div>
+      <div class="product" data-category="clothing">
+        <img src="https://via.placeholder.com/200" alt="Producto 2">
+        <h3>Producto 2 - Ropa</h3>
+        <p>$300</p>
+      </div>
+      <div class="product" data-category="home">
+        <img src="https://via.placeholder.com/200" alt="Producto 3">
+        <h3>Producto 3 - Hogar</h3>
+        <p>$700</p>
+      </div>
+      <div class="product" data-category="electronics">
+        <img src="https://via.placeholder.com/200" alt="Producto 4">
+        <h3>Producto 4 - Electrónica</h3>
+        <p>$400</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
