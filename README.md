@@ -3,3 +3,6 @@ tiene como una especie de negrita en el logo al igual que si comparan el login d
 logo ns :D
 (y todo eso comits que estan es porque queria hacer correr la pagina desde git hub pero no deja porq el archivo tiene q estar en index y ns q mas pero no deja, aveces no carga el css entonces ya q luego 
 vemos eso, supongo)
+CMD
+git config user.name "--"
+git config user.email "--"
