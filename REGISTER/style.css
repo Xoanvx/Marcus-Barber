@@ -8,7 +8,7 @@
 html, body {
     height: 100%;
     margin: 0;
-    background-image: url("../imag/login.png");
+    background-image: url("../imag/register.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -22,10 +22,11 @@ main {
     width: 100vw;
 }
 
-.login {
+.register {
     display: flex;
     width: 100vw;
     justify-content: center; 
+    flex-direction: row-reverse;
 }
 
 .input{
@@ -66,7 +67,7 @@ main {
 }
 
 .primera-parte .titulo{
-    margin: 30px;
+    margin-bottom: 20px;
     color: white;
 }
 
@@ -83,23 +84,24 @@ main {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
     font-size: 12px;
-    color: #B8977E;
+    color: #ababab;
 }
 
-.cont{
+.primera-parte img{
+    height: 25%;
+    margin-bottom: 10px;
+}
+
+.cont input{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.cont label{
-    margin-bottom: 5px;
-}
-
 .segunda-parte {
     width: 100%;
-    height: 50vh;
+    height: 55vh;
     background-color: #D9D9D9;
     padding: 3vh 2vw;
     display: flex;
@@ -127,7 +129,7 @@ main {
     border: none;
     border-radius: 25px;
     margin-bottom: 1vh;
-    font-size: 15px;
+    font-size: 13px;
     background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -199,32 +201,32 @@ img{
     transition: all 0.3s ease;
 }
 
-.texto:hover #sesion{
+.texto:hover #cuenta{
     /* background-color: rgba(0,0,0,0.7); */
     font-size: 4rem;
     transition: all 0.3s ease;
 }
 
-#iniciar{
+#crear{
     color: #846752;
 }
 
-#sesion{
+#cuenta{
     font-size: 3.5rem;
 }
 
 @media(max-width: 1400px){
-    .login {
+    .register {
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .login .texto {
+    .register .texto {
         display: none;
     }
 
-    .login .input {
+    .register .input {
         width: 90%;
         justify-content: center;
         align-items: center;

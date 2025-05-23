@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Marcus Barber Shop</title>
+    <title>Register | Marcus Barber Shop</title>
     <link rel="stylesheet" href="../styleHeaderFooter.css">
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -28,8 +28,9 @@
     </header>
 
     <main>
-        <div class="login">
+        <div class="register">
             <div class="input">
+
                 <div class="box">
                     <div class="primera-parte">
                         <div class="titulo">
@@ -37,23 +38,29 @@
                             <p>a nuestra barberia</p>
                         </div>
                         <div class="descripcion">
-                            <p>El estilo te esta esperando.</p>
-                            <p>Inicia sesión y prepárate para tu proxima experiencia</p>
+                            <p>Donde el arte de la barbería se encuentra con el estilo.</p>
+                            <p>Regístrate para reservar tu próximo corte
+                            y experimenta la transformación.</p>
                         </div>
+                        <img src="../imag/tijeras.png" alt="Tijeras" class="tijeras">
                     </div>
                     <div class="segunda-parte">
-                        <label for="nombre">USUARIO O EMAIL:</label>
-                        <input type="text" id="nombre" required>
-                        <label for="contrasena">CONTRASEÑA</label>
-                        <input type="text" id="contrasena" required>
+                        <div class="cont">
+                            <input type="text" placeholder="Nombre completo" id="nombre" required>
+                            <input type="text" placeholder="Correo electronico" id="contrasena" required>
+                            <input type="text" placeholder="Celular" id="contrasena" required>
+                            <input type="text" placeholder="Contraseña" id="contrasena" required>
+                            <input type="text" placeholder="Confirmar contraseña" id="contrasena" required>
+                        </div>
                         <button>Empezar</button>
-                        <p>¿No tienes cuenta? <a href="../REGISTER/register.html">Registrate aquí</a></p>
+                        <p>¿Ya tienes cuenta? <a href="../LOGIN/login.html">Inicia sesión</a></p>
+                        <img src="../imag/marcuss.png" alt="Logo" class="logo">
                     </div>
                 </div>
             </div>
             <div class="texto">
-                <p id="iniciar">INICIAR</p>
-                <P>SESION</P>
+                <p id="crear">CREAR</p>
+                <P id="cuenta">CUENTA</P>
             </div>
         </div>
     </main>

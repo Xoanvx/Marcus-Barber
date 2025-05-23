@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }
 
 body {
@@ -26,6 +27,13 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
+    color: #000;
+    transition: all 0.5s ease;
+}
+
+.logo-container:hover {
+    cursor: pointer;
+    color: rgb(160, 102, 45);
 }
 
 .logo-container img {
