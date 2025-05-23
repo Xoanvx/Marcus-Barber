@@ -1,20 +1,18 @@
 body {
   background-color: #f5f5f5;
   color: #333;
-  
 }
 
 .container {
   width: 90%;
   max-width: 1000px;
-  margin: 40px auto;
-  background: #fff;
+  margin: 4% auto;
   padding: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 table {
@@ -23,7 +21,7 @@ table {
 }
 
 thead {
-  background-color: #666;
+  background-color: #a06b53;
   color: white;
 }
 
@@ -34,8 +32,13 @@ td {
   border-bottom: 1px solid #ddd;
 }
 
+tr {
+  border: #a06b53 solid 2px;
+}
+
 .status {
-  background-color: #cacaca;
+  background-color: black;
+  color: white;
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 12px;
@@ -51,4 +54,3 @@ td {
 .reorder:hover {
   text-decoration: underline;
 }
-
