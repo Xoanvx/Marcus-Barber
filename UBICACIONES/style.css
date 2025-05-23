@@ -1,0 +1,97 @@
+
+
+/* area de ubicaciones */
+.ubicaciones-section {
+  padding: 60px 40px;
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+}
+
+.ubicaciones-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #c7a17a;
+}
+
+.ubicaciones-section .intro {
+  font-size: 1rem;
+  margin-bottom: 40px;
+  color: #ccc;
+}
+
+.ubicaciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.ubicacion-card {
+  background-color: #2a2a2a;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.ubicacion-card:hover {
+  transform: translateY(-5px);
+}
+
+.ubicacion-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.ubicacion-card h3 {
+  color: #c7a17a;
+  margin: 15px 20px 5px;
+}
+
+.ubicacion-card p {
+  margin: 5px 20px;
+  font-size: 0.95rem;
+}
+
+.mapa-btn {
+  display: inline-block;
+  margin: 10px 20px;
+  padding: 8px 16px;
+  background-color: #c7a17a;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.mapa-btn:hover {
+  background-color: #a67c52;
+}
+
+.telefono {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 10px 20px 20px;
+}
+
+@media (max-width: 768px) {
+    .politica-section {
+        flex-direction: column;
+    }
+    
+    .politica-number {
+        font-size: 3rem;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .politicas-index {
+        padding: 20px;
+    }
+}

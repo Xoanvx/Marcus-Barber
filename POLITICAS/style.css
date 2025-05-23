@@ -1,0 +1,182 @@
+
+/* Estilos específicos para la página de políticas */
+
+/* Mantener la coherencia con los estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Cambio de fuente a Montserrat para una estética más moderna */
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+/* Contenedor principal con margen para separar del header */
+.politicas-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Estilo para la sección de hero con efecto degradado */
+.hero-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    color: #fff;
+    padding: 80px 40px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 40px;
+    /* Añado sombra para dar profundidad */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    /* Efecto de texto con borde dorado */
+    text-shadow: 1px 1px 3px rgba(199, 161, 122, 0.6);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+    color: #c7a17a; /* Color dorado para destacar */
+}
+
+/* Estilo para el índice de políticas */
+.politicas-index {
+    background-color: #f8f8f8;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+    /* Efecto de sombra suave */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.politicas-index h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    /* Línea decorativa debajo del título */
+    padding-bottom: 15px;
+}
+
+.politicas-index h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #c7a17a; /* Color dorado para elementos decorativos */
+}
+
+/* Grid para el índice - organización en columnas adaptativas */
+.index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.index-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    /* Borde con efecto hover */
+    border: 1px solid #eee;
+}
+
+.index-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-color: #c7a17a;
+    background-color: #faf8f5;
+}
+
+.index-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #c7a17a;
+    margin-right: 15px;
+    /* Efecto moderno con opacidad */
+    opacity: 0.8;
+}
+
+.index-title {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Estilo para cada sección de política */
+.politica-section {
+    display: flex;
+    margin-bottom: 80px;
+    /* Efecto de separación entre secciones */
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Número grande a la izquierda */
+.politica-number {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 0.2; /* Efecto sutil de marca de agua */
+    margin-right: 30px;
+    align-self: flex-start;
+    line-height: 1;
+    min-width: 80px;
+    text-align: center;
+}
+
+.politica-content {
+    flex: 1;
+}
+
+.politica-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+    border-left: 4px solid #c7a17a;
+    padding-left: 15px;
+    /* Efecto de transición al hacer hover */
+    transition: padding-left 0.3s ease;
+}
+
+.politica-content h2:hover {
+    padding-left: 20px;
+}
+
+.politica-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .politica-section {
+        flex-direction: column;
+    }
+    
+    .politica-number {
+        font-size: 3rem;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .politicas-index {
+        padding: 20px;
+    }
+}

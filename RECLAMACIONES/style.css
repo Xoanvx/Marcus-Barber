@@ -1,0 +1,109 @@
+.reclamaciones {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    margin: 20px;
+}
+
+.container{
+    background-color: #E2E2E2;
+    width: 80%;
+    max-width: 900px;
+    padding: 40px;
+    margin-bottom: 80px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    grid-template-rows: repeat(3, auto);  /* 3 filas */
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+
+button{
+    margin: 50px 0px;
+    max-width: 200px;
+    border-radius: 12px;
+    border: none;
+    background-color: #CC9B6D;
+    padding: 10px;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover{
+    transition: all 0.3s ease;
+    font-size: 14px;
+    color: #c7a17a;
+    background-color: #333;
+}
+
+.necesario{
+    color: red;
+    font-weight: 900;
+}
+
+.grid-item {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+label{
+    font-weight: 600;
+}
+
+input, textarea{
+        width: 100%;
+        padding: 10px;
+        border-radius: 25px;
+        /* border: 1px solid #b1b1b1; */
+        border: none;
+        box-shadow: 2px 2px 3px 3px #b1b1b1;
+    }
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.mensaje{
+    background-color: #C0C0C0;
+    padding: 30px;
+    box-shadow: -8px 0 0px 0px #CC9B6D;
+}
+
+.texto{
+    margin: 25px 0px;
+}
+
+.area{
+    height: 100px;
+    border-radius: 15px;
+}
+
+/* Responsive: en pantallas pequeñas se vuelve 1 columna */
+@media (max-width: 800px) {
+    .grid-container {
+    grid-template-columns: 1fr;
+    }
+
+
+    .container {
+        background-color: #E2E2E2;
+        width: 100%;
+        max-width: none;
+    }
+
+    button{
+        width: 100%;
+        max-width: none;
+    }
+}
