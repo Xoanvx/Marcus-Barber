@@ -1,0 +1,268 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mision {
+  margin-top: 6%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+  margin-bottom: 9%;
+}
+
+.mision img,
+.vision img {
+  width: 90vh;
+  max-width: 550px;
+  border-radius: 10px;
+  transition: all 1s ease;
+}
+
+.mision .text-box {
+  position: relative;
+  width: 80vh;
+  max-width: 600px;
+  height: auto;
+  padding: 3% 2% 5% 2%;
+  background-color: black;
+  border-radius: 20px;
+  margin-right: -100px;
+  text-align: left;
+}
+
+.text-box h3 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: white;
+}
+
+.text-box p {
+  font-size: 1rem;
+  line-height: 2rem;
+  color: white;
+}
+
+.vision {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    #f2f2f2 100%
+  );
+  padding: 20vh 5% 15vh 5%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vision .text-box {
+  background-color: #f2f2f2;
+  width: 80vh;
+  max-width: 650px;
+  color: black;
+  position: relative;
+  padding: 3% 2% 5% 2%;
+  border-radius: 20px;
+  text-align: left;
+  margin-left: -100px;
+}
+
+.vision .text-box h3,
+.vision .text-box p {
+  color: black;
+}
+
+.mision img:hover,
+.vision img:hover {
+  width: 100%;
+  max-width: 600px;
+}
+
+@media (max-width: 1200px) {
+  .mision .text-box {
+    margin-right: -50px;
+  }
+
+  .mision img,
+  .vision img {
+    width: 70vh;
+    max-width: 450px;
+  }
+
+  .mision .text-box,
+  .vision .text-box {
+    width: 60vh;
+    max-width: 500px;
+  }
+
+  .vision .text-box {
+    margin-left: -60px;
+  }
+}
+
+@media (max-width: 992px) {
+  h2 {
+    font-size: 2rem;
+    margin: 30px 0;
+  }
+
+  .mision {
+    padding: 0 2%;
+  }
+
+  .vision {
+    padding: 20% 2% 10% 0;
+  }
+
+  .mision .text-box {
+    margin-right: -30px;
+  }
+
+  .mision img,
+  .vision img {
+    width: 60vh;
+    max-width: 380px;
+  }
+
+  .mision .text-box,
+  .vision .text-box {
+    width: 50vh;
+    max-width: 420px;
+    padding: 2% 2% 4% 2%;
+  }
+
+  .text-box h3 {
+    font-size: 1.8rem;
+  }
+
+  .text-box p {
+    font-size: 0.95rem;
+    line-height: 1.8rem;
+  }
+
+  .vision .text-box {
+    margin-left: -40px;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.8rem;
+    margin: 20px 0;
+  }
+
+  .mision,
+  .vision {
+    flex-direction: column;
+    padding: 5% 5%;
+    margin-top: 0;
+    padding-left: 5%;
+  }
+
+  .mision img,
+  .vision img {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    order: unset;
+    margin-left: 0;
+    margin-right: 0;
+    z-index: auto;
+  }
+
+  .mision .text-box,
+  .vision .text-box {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto;
+    order: unset;
+    padding: 5%;
+    z-index: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .mision .text-box {
+    margin-bottom: -50px;
+  }
+
+  .vision .text-box {
+    margin-top: -50px;
+  }
+
+  .text-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .text-box p {
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+  }
+
+  .vision {
+    padding-top: 30vh;
+    padding-bottom: 5vh;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .mision img,
+  .vision img {
+    width: 100%;
+    max-width: none;
+  }
+
+  .mision .text-box,
+  .vision .text-box {
+    width: 100%;
+    max-width: none;
+    padding: 8%;
+  }
+
+  .text-box h3 {
+    font-size: 1.3rem;
+  }
+
+  .text-box p {
+    font-size: 0.85rem;
+    line-height: 1.5rem;
+  }
+
+  .mision .text-box {
+    margin-bottom: -30px;
+  }
+
+  .vision .text-box {
+    margin-top: -30px;
+  }
+}
