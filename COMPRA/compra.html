@@ -11,24 +11,26 @@
 </head>
 
 <body>
-
     <header class="header-container">
-        <div class="logo-container">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnL3N2Zz4KPGNuIGN4PSIyNSIgY3k9IjI1IiByPSIyNSIgZmlsbD0iI2M3YTE3YSIvPgo8c3ZnIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlnd29wczEwLjAiIHkxMC4wIiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xNS4wIEMyMC4wIDEwLjAgMjUuMCAxMC4wIDI1LjAgMTUuMCBTIDIwLjAgMjUuMCAxNS4wIDI1LjAgUCA1LjAgMjAuMCA1LjAgMTUuMCBTIDEwLjAgNS4wIDE1LjAgNS4wIFoiLz4KPC9zdmc+Cjwvc3ZnPgo="
-                alt="Marcus Barber Shop Logo">
-            <span class="brand-name">Marcus Barber Shop</span>
-        </div>
+        <a href="../INICIO/index.html">
+            <div class="logo-container">
+                <img src="../imag/marcuss.png" alt="Marcus Barber Shop Logo" />
+                <div class="brand-name">
+                    Marcus<br />
+                    Barber Shop
+                </div>
+            </div>
+        </a>
         <nav>
             <ul class="menu">
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">NOSOTROS</a></li>
-                <li><a href="#">PRODUCTO</a></li>
+                <li><a href="../INICIO/index.html">INICIO</a></li>
+                <li><a href="../PRODUCTOS/productos.html">PRODUCTO</a></li>
                 <li><a href="#">RESERVAS</a></li>
-                <li><a href="#">UBICACIONES</a></li>
+                <li><a href="../UBICACIONES/ubicaciones.html">UBICACIONES</a></li>
                 <li><a href="#">CONTACTOS</a></li>
             </ul>
         </nav>
-        <a href="#" class="login-button">LOGIN</a>
+        <a href="../LOGIN/login.html" class="login-button">LOGIN</a>
     </header>
 
     <div class="main-container">
@@ -166,30 +168,27 @@
 
             <div class="footer-section">
                 <h3>Medios de pago</h3>
-                <div class="payment-methods"> <i class="fab fa-cc-visa"></i>
-                    <i class="fab fa-cc-mastercard"></i>
-                    <i class="fab fa-cc-amex"></i>
-                    <i class="fab fa-cc-diners-club"></i>
-                    <i class="fab fa-paypal"></i>
+                <div class="payment-methods">
+                    <!-- Aquí van las imágenes de métodos de pago que incluirás -->
+                    <img src="../imag/visa.png" alt="Visa" />
+                    <img src="../imag/mastercard.png" alt="Mastercard" />
+                    <img src="../imag/american.png" alt="American Express" />
+                    <img src="../imag/pagoefectivo.png" alt="Pago Efectivo" />
                 </div>
             </div>
 
-            <div class="footer-section siguenos">
-                <h3>Síguenos</h3>
-                <div class="social-icons"> <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
+            <h3 class="siguenos">Síguenos</h3>
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             </div>
-        </div>
-
-        <div class="copyright">
-            <p>TODOS LOS DERECHOS RESERVADOS</p>
-            <p>&copy; 2024 Marcus Barber Shop - Estilo que transforma.</p>
         </div>
     </footer>
-
+    <div class="copyright">
+        <p>TODOS LOS DERECHOS RESERVADOS</p>
+        <p>© 2025 Marcus Barber Shop — Estilo que transforma.</p>
+    </div>
     <script>
         // Función para cambiar la imagen principal
         function changeImage(thumbnailElement, newImageSrc) {

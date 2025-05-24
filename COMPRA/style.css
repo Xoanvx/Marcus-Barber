@@ -1,4 +1,4 @@
-/* Reseteo de estilos básicos - Mantener en el archivo que lo tenías */
+
 * {
     margin: 0;
     padding: 0;
@@ -89,7 +89,7 @@ body {
 .product-thumbnails img.active,
 .product-thumbnails img:hover {
     border-color: #d4af37;
-    transform: scale(1.05); /* Ligeramente más grande al pasar el mouse o activar */
+    transform: scale(1.05); 
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); /* Sombra al pasar el mouse o activar */
 }
 
