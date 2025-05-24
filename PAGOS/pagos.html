@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pagos - Marcus Barber Shop</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styleHeaderFooter.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header-container">
+        <div class="logo-container">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiIGZpbGw9IiNjN2ExN2EiLz4KPHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZ3dvY2hKxDEwIiB5PSIxMCIgZmlsbD0id2hpdGUiPgo8cGF0aCBkPSJNMTUgNUMyMCA1IDI1IDEwIDI1IDE1UzIwIDI1IDE1IDI1UzUgMjAgNSAxNVMxMCA1IDE1NVoiLz4KPC9zdmc+Cjwvc3ZnPgo="
+                alt="Marcus Barber Shop Logo">
+            <span class="brand-name">Marcus Barber Shop</span>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">INICIIO</a></li>
+                <li><a href="#">PRODUCTO</a></li>
+                <li><a href="#">RESERVAS</a></li>
+                <li><a href="#">UBICACIONES</a></li>
+                <li><a href="#">CONTACTOS</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="login-button">LOGIN</a>
+    </header>
+
+    <div class="main-container">
+        <h1>Pagos</h1>
+
+        <div class="content-wrapper">
+            <section class="products-section" id="product-list-section">
+                <h2>Productos Disponibles</h2>
+                <div id="product-list">
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100/d4af37/ffffff?text=Producto1" alt="Corte Clásico">
+                        <h3>Corte Clásico</h3>
+                        <p>Un corte de cabello tradicional y elegante.</p>
+                        <p class="price">$25.00</p>
+                        <button class="add-to-cart-btn" data-id="1">Añadir</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100/d4af37/ffffff?text=Producto2" alt="Arreglo de Barba">
+                        <h3>Arreglo de Barba</h3>
+                        <p>Define y estiliza tu barba con precisión.</p>
+                        <p class="price">$15.00</p>
+                        <button class="add-to-cart-btn" data-id="2">Añadir</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100/d4af37/ffffff?text=Producto3"
+                            alt="Tratamiento Capilar">
+                        <h3>Tratamiento Capilar</h3>
+                        <p>Revitaliza tu cabello con nuestros tratamientos.</p>
+                        <p class="price">$30.00</p>
+                        <button class="add-to-cart-btn" data-id="3">Añadir</button>
+                    </div>
+                </div>
+            </section>
+
+            <div style="display: flex; flex-direction: column; flex: 1; gap: 30px;">
+                <section class="summary-section" id="summary-section">
+                    <h2>Resumen de cuenta...</h2>
+                    <div id="cart-items">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Cantidad</th>
+                                    <th class="item-price">Precio Unit.</th>
+                                    <th class="item-total-price">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Corte Clásico</td>
+                                    <td>
+                                        <button class="cart-qty-btn decrease-qty" data-id="1">-</button>
+                                        <span>1</span>
+                                        <button class="cart-qty-btn increase-qty" data-id="1">+</button>
+                                    </td>
+                                    <td class="item-price">$25.00</td>
+                                    <td class="item-total-price">$25.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cart-total">
+                        <strong>Total a Pagar: <span id="cart-total-amount">$25.00</span></strong>
+                    </div>
+                </section>
+
+                <section class="billing-section" id="billing-section">
+                    <h2>Métodos de Pago</h2>
+                    <div class="billing-method selected" onclick="selectPaymentMethod(this)">
+                        <input type="radio" name="billingMethod" value="mastercard" checked>
+                        <label>
+                            <span class="card-brand">Mastercard</span>
+                            <br>
+                            <span class="card-info">Tarjeta de Crédito/Débito (Predeterminado)</span>
+                        </label>
+                    </div>
+                    <div class="billing-method" onclick="selectPaymentMethod(this)">
+                        <input type="radio" name="billingMethod" value="visa">
+                        <label>
+                            <span class="card-brand">Visa Card</span>
+                            <br>
+                            <span class="card-info">Tarjeta de Crédito/Débito</span>
+                        </label>
+                    </div>
+                    <div class="billing-method" onclick="selectPaymentMethod(this)">
+                        <input type="radio" name="billingMethod" value="amex">
+                        <label>
+                            <span class="card-brand">American Express</span> 
+                            <br>
+                            <span class="card-info">Tarjeta de Crédito</span>
+                        </label>
+                    </div>
+                    <div class="billing-method" onclick="selectPaymentMethod(this)">
+                        <input type="radio" name="billingMethod" value="paypal">
+                        <label>
+                            <span class="card-brand">PayPal</span><br>
+                            <span class="card-info">Billetera Digital</span>
+                        </label>
+                    </div>
+                    <div class="billing-method" onclick="selectPaymentMethod(this)">
+                        <input type="radio" name="billingMethod" value="yape">
+                        <label>
+                            <span class="card-brand">Yape</span><br>
+                            <span class="card-info">Billetera Digital </span>
+                        </label>
+                    </div>
+                    <div class="billing-method" onclick="selectPaymentMethod(this)">
+                        <input type="radio" name="billingMethod" value="plin">
+                        <label>
+                            <span class="card-brand">Plin</span><br>
+                            <span class="card-info">Billetera Digital</span>
+                        </label>
+                    </div>
+                    <p style="text-align: right; margin-top: 10px;">
+                        <a href="#" style="color: #d4af37; text-decoration: none;">Ver todos los métodos de pago y
+                            facturación</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+        <div class="pay-button-container">
+            <button class="pay-button" onclick="processPayment()">Pagar Ahora</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Te ayudamos</h3>
+                <ul class="footer-list">
+                    <li><a href="#">Libro de reclamaciones</a></li>
+                    <li><a href="#">Atención por Whatsapp</a></li>
+                    <li><a href="#">Servicios</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Términos Legales</h3>
+                <ul class="footer-list">
+                    <li><a href="#">Políticas de la Empresa</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Nuestra Empresa</h3>
+                <ul class="footer-list">
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                    <li><a href="#">Nuestra Empresa</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Medios de pago</h3>
+                <div class="payment-methods">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA0MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzAwNTFBNSIvPgo8dGV4dCB4PSI1IiB5PSIxNSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iOCIgZm9udC1mYW1pbHk9IkFyaWFsIj5WSVNBPC90ZXh0Pgo8L3N2Zz4K"
+                        alt="Visa">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA0MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iI0VCMDAxQiIvPgo8dGV4dCB4PSI4IiB5PSIxNSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iNiIgZm9udC1mYW1pbHk9IkFyaWFsIj5NQVNURVJDQVJEPC90ZXh0Pgo8L3N2Zz4K"
+                        alt="Mastercard">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD09IjI0IiB2aWV3Qm94PSIwIDAgNDAgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd2d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MCIgaGVpZ2h0PSIyNCIgcng9IjQiIGZpbGw9IiMwMDZGMkYiLz4KPHRleHQgeD0iNiIgeT0iMTUiIGZpbGwl0IndoaXRlIiBmb250LXNpemU9IjYiIGZvbnQtZmFtaWx5PSJBcmlhbCI+QU1FWDwvdGV4dD4KPC9zdmc+Cg=="
+                        alt="American Express">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD09IjI0IiB2aWV3Qm94PSIwIDAgNDAgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd2d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MCIgaGVpZ2h0PSIyNCIgcng9IjQiIGZpbGw9IiMwMDMwODciLz4KPHRleHQgeD0iOCIgeT0iMTUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjgiIGZvbnQtZmFtaWx5PSJBcmlpYWwiPkxJTksvPgo8L3N2Zz4K"
+                        alt="PayPal">
+                </div>
+            </div>
+
+            <div class="footer-section siguenos">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>TODOS LOS DERECHOS RESERVADOS</p>
+            <p>© 2024 Marcus Barber Shop - Estilo que transforma.</p>
+        </div>
+    </footer>
+
+    <script>
+        function selectPaymentMethod(element) {
+            const billingMethods = document.querySelectorAll('.billing-method');
+            billingMethods.forEach(method => method.classList.remove('selected'));
+            element.classList.add('selected');
+            element.querySelector('input[type="radio"]').checked = true;
+        }
+
+        function processPayment() {
+            const selectedMethod = document.querySelector('input[name="billingMethod"]:checked');
+            if (selectedMethod) {
+                alert(`¡Pago procesado con éxito usando ${selectedMethod.value}! (Esta es una función de demostración)`);
+            } else {
+                alert('Por favor, selecciona un método de pago.');
+            }
+        
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const productList = document.getElementById('product-list');
+            const cartItemsBody = document.querySelector('#cart-items tbody');
+            const cartTotalAmount = document.getElementById('cart-total-amount');
+            let cartTotal = 0;
+
+            const products = [
+                { id: 1, name: 'Corte Clásico', price: 25.00, image: 'https://via.placeholder.com/100/d4af37/ffffff?text=Producto1' },
+                { id: 2, name: 'Arreglo de Barba', price: 15.00, image: 'https://via.placeholder.com/100/d4af37/ffffff?text=Producto2' },
+                { id: 3, name: 'Tratamiento Capilar', price: 30.00, image: 'https://via.placeholder.com/100/d4af37/ffffff?text=Producto3' },
+                { id: 4, name: 'Masaje Facial', price: 20.00, image: 'https://via.placeholder.com/100/d4af37/ffffff?text=Producto4' },
+            ];
+
+            function renderProducts() {
+                productList.innerHTML = '';
+                products.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.classList.add('product-item');
+                    productDiv.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p class="description">${product.name} Descripción detallada del servicio.</p>
+                        <p class="price">$${product.price.toFixed(2)}</p>
+                        <button class="add-to-cart-btn" data-id="${product.id}">Añadir</button>
+                    `;
+                    productList.appendChild(productDiv);
+                });
+            }
+
+            let cart = {};
+
+            function updateCartDisplay() {
+                cartItemsBody.innerHTML = '';
+                cartTotal = 0;
+
+                for (const productId in cart) {
+                    const item = cart[productId].item;
+                    const quantity = cart[productId].quantity;
+                    const itemTotalPrice = item.price * quantity;
+                    cartTotal += itemTotalPrice;
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.name}</td>
+                        <td>
+                            <button class="cart-qty-btn decrease-qty" data-id="${productId}">-</button>
+                            <span>${quantity}</span>
+                            <button class="cart-qty-btn increase-qty" data-id="${productId}">+</button>
+                        </td>
+                        <td class="item-price">$${item.price.toFixed(2)}</td>
+                        <td class="item-total-price">$${itemTotalPrice.toFixed(2)}</td>
+                    `;
+                    cartItemsBody.appendChild(row);
+                }
+                cartTotalAmount.textContent = `$${cartTotal.toFixed(2)}`;
+
+                document.querySelectorAll('.increase-qty').forEach(button => {
+                    button.onclick = (e) => {
+                        const id = e.target.dataset.id;
+                        cart[id].quantity++;
+                        updateCartDisplay();
+                    };
+                });
+                document.querySelectorAll('.decrease-qty').forEach(button => {
+                    button.onclick = (e) => {
+                        const id = e.target.dataset.id;
+                        if (cart[id].quantity > 1) {
+                            cart[id].quantity--;
+                        } else {
+                            delete cart[id];
+                        }
+                        updateCartDisplay();
+                    };
+                });
+            }
+
+            productList.addEventListener('click', (event) => {
+                if (event.target.classList.contains('add-to-cart-btn')) {
+                    const productId = parseInt(event.target.dataset.id);
+                    const productToAdd = products.find(p => p.id === productId);
+
+                    if (productToAdd) {
+                        if (cart[productId]) {
+                            cart[productId].quantity++;
+                        } else {
+                            cart[productId] = { item: productToAdd, quantity: 1 };
+                        }
+                        updateCartDisplay();
+                    }
+                }
+            });
+
+            renderProducts();
+            updateCartDisplay();
+        });
+    </script>
+</body>
+
+</html>

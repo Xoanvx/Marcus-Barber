@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Producto - Marcus Barber Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styleHeaderFooter.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header-container">
+        <div class="logo-container">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnL3N2Zz4KPGNuIGN4PSIyNSIgY3k9IjI1IiByPSIyNSIgZmlsbD0iI2M3YTE3YSIvPgo8c3ZnIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlnd29wczEwLjAiIHkxMC4wIiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xNS4wIEMyMC4wIDEwLjAgMjUuMCAxMC4wIDI1LjAgMTUuMCBTIDIwLjAgMjUuMCAxNS4wIDI1LjAgUCA1LjAgMjAuMCA1LjAgMTUuMCBTIDEwLjAgNS4wIDE1LjAgNS4wIFoiLz4KPC9zdmc+Cjwvc3ZnPgo="
+                alt="Marcus Barber Shop Logo">
+            <span class="brand-name">Marcus Barber Shop</span>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">NOSOTROS</a></li>
+                <li><a href="#">PRODUCTO</a></li>
+                <li><a href="#">RESERVAS</a></li>
+                <li><a href="#">UBICACIONES</a></li>
+                <li><a href="#">CONTACTOS</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="login-button">LOGIN</a>
+    </header>
+
+    <div class="main-container">
+        <div class="breadcrumbs">
+            <a href="#">Listado de Productos</a>
+            <span>&gt;</span>
+            <span>Lote de afeitado ATX de HeadBlade</span>
+        </div>
+
+        <section class="product-purchase-section">
+            <div class="product-gallery">
+                <div class="main-product-image">
+                    <img src="https://via.placeholder.com/500x500.png?text=Producto+Principal"
+                        alt="Lote de afeitado ATX de HeadBlade" id="mainImage">
+                </div>
+                <div class="product-thumbnails">
+                    <img src="https://via.placeholder.com/80x80.png?text=Thumb1" alt="Vista miniatura 1" class="active"
+                        onclick="changeImage(this, 'https://via.placeholder.com/500x500.png?text=Producto+Principal')">
+                    <img src="https://via.placeholder.com/80x80.png?text=Thumb2" alt="Vista miniatura 2"
+                        onclick="changeImage(this, 'https://via.placeholder.com/500x500.png?text=Vista+2')">
+                    <img src="https://via.placeholder.com/80x80.png?text=Thumb3" alt="Vista miniatura 3"
+                        onclick="changeImage(this, 'https://via.placeholder.com/500x500.png?text=Vista+3')">
+                    <img src="https://via.placeholder.com/80x80.png?text=Thumb4" alt="Vista miniatura 4"
+                        onclick="changeImage(this, 'https://via.placeholder.com/500x500.png?text=Vista+4')">
+                </div>
+            </div>
+
+            <div class="product-details">
+                <h1>Lote de afeitado ATX de HeadBlade</h1>
+                <div class="product-rating">
+                    ★★★★☆ (4.0)
+                </div>
+                <p class="product-price">S/54.98</p>
+                <div class="product-attributes">
+                    <p><strong>Marca:</strong> HeadBlade</p>
+                    <p><strong>Cantidad de hojas:</strong> 4 Uds</p>
+                    <p><strong>Rango de recomendación de edad:</strong> Descripción/Adulto</p>
+                    <p><strong>Tipo de piel:</strong> Todas</p>
+                </div>
+
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick="addToCart()">AÑADIR AL CARRITO</button>
+                    <button class="pay-now-btn" onclick="payNow()">Pagar ahora</button>
+                </div>
+
+                <div class="shipping-info">
+                    <p>✓ Envío internacional gratuito en pedidos superiores a $100.</p>
+                    <p>✓ Entrega en 3-7 días hábiles. Envío y Devoluciones.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tabs-section">
+            <div class="tab-buttons">
+                <button class="tab-button" onclick="openTab(event, 'descripcion')">Descripción</button>
+                <button class="tab-button" onclick="openTab(event, 'reseñas')">Reseñas</button>
+            </div>
+
+            <div id="descripcion" class="tab-pane">
+                <h3>Descripción del Producto</h3>
+                <p>El paquete Básico viene con una maquinilla de afeitar ATX, un kit de recambio HB4 y una botella de 5
+                    onzas de crema de afeitar HeadSlick.</p>
+                <ul>
+                    <li>HeadSlick es soluble en agua, por lo que es fácil enjuagar las cuchillas después de su uso. La
+                        crema mentolada crea una experiencia única y fresca para cada vez que te la aplicas.</li>
+                    <li>La maquinilla de afeitar ATX elimina la curva de aprendizaje para cualquier persona que haya
+                        utilizado previamente una maquinilla de afeitar convencional.</li>
+                    <li>Cartuchos de repuesto de cuchillas (4 cuchillas por paquete). Contiene un adaptador por paquete.
+                    </li>
+                    <li>Un gran regalo para afeitarse la cabeza, amigos y familiares. Cuchillas de recarga disponibles.
+                    </li>
+                </ul>
+            </div>
+
+            <div id="reseñas" class="tab-pane">
+                <h3>Reseñas de Clientes</h3>
+                <p>Actualmente no hay reseñas para este producto.</p>
+            </div>
+        </section>
+
+        <section class="similar-products-section">
+            <h2>Productos Similares</h2>
+            <div class="similar-products-grid">
+                <div class="similar-product-card">
+                    <img src="https://via.placeholder.com/150x150.png?text=Similar+1" alt="Producto Similar 1">
+                    <h3>Loción After Shave Club</h3>
+                    <p>S/25.00</p>
+                </div>
+                <div class="similar-product-card">
+                    <img src="https://via.placeholder.com/150x150.png?text=Similar+2" alt="Producto Similar 2">
+                    <h3>Harry's Loción Facial</h3>
+                    <p>S/30.00</p>
+                </div>
+                <div class="similar-product-card">
+                    <img src="https://via.placeholder.com/150x150.png?text=Similar+3" alt="Producto Similar 3">
+                    <h3>BabylissPRO Botella</h3>
+                    <p>S/15.50</p>
+                </div>
+                <div class="similar-product-card">
+                    <img src="https://via.placeholder.com/150x150.png?text=Similar+4" alt="Producto Similar 4">
+                    <h3>Kit Afeitado Premium</h3>
+                    <p>S/75.00</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Te ayudamos</h3>
+                <ul class="footer-list">
+                    <li><a href="#">Libro de reclamaciones</a></li>
+                    <li><a href="#">Atención por Whatsapp</a></li>
+                    <li><a href="#">Servicios</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Términos Legales</h3>
+                <ul class="footer-list">
+                    <li><a href="#">Políticas de la Empresa</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Nuestra Empresa</h3>
+                <ul class="footer-list">
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                    <li><a href="#">Nuestra Empresa</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Medios de pago</h3>
+                <div class="payment-methods"> <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-diners-club"></i>
+                    <i class="fab fa-paypal"></i>
+                </div>
+            </div>
+
+            <div class="footer-section siguenos">
+                <h3>Síguenos</h3>
+                <div class="social-icons"> <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>TODOS LOS DERECHOS RESERVADOS</p>
+            <p>&copy; 2024 Marcus Barber Shop - Estilo que transforma.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Función para cambiar la imagen principal
+        function changeImage(thumbnailElement, newImageSrc) {
+            document.getElementById('mainImage').src = newImageSrc;
+
+            const thumbnails = document.querySelectorAll('.product-thumbnails img');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+
+            thumbnailElement.classList.add('active');
+        }
+
+        // Función para abrir las pestañas
+        function openTab(event, tabName) {
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            tabPanes.forEach(pane => pane.style.display = 'none');
+
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabName).style.display = 'block';
+            event.currentTarget.classList.add('active');
+        }
+
+        // Función para añadir al carrito
+        function addToCart() {
+            alert('Producto añadido al carrito');
+            // la lógica real para añadir al carrito
+        }
+
+        // Función para pagar ahora
+        function payNow() {
+            alert('Procediendo al pago (simulación).');
+            // la lógica real para proceder al pago
+        }
+
+        // Función para animar elementos al aparecer en el scroll
+        const animateOnScroll = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up-visible');
+                    observer.unobserve(entry.target); // Dejar de observar una vez que se ha animado
+                }
+            });
+        };
+
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% del elemento visible para activar
+        };
+
+        const observer = new IntersectionObserver(animateOnScroll, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Observar la sección de productos similares
+            const similarProductsSection = document.querySelector('.similar-products-section');
+            if (similarProductsSection) {
+                observer.observe(similarProductsSection);
+            }
+
+            // Observar cada tarjeta de producto similar individualmente para un efecto escalonado
+            const productCards = document.querySelectorAll('.similar-product-card');
+            productCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+
+        // Asegurarse de que la primera pestaña esté activa al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstTabButton = document.querySelector('.tab-buttons .tab-button');
+            const firstTabPane = document.querySelector('.tab-pane');
+            if (firstTabButton && firstTabPane) {
+                // Asegura que la primera pestaña se muestre al cargar
+                firstTabButton.click(); // Simula un clic en la primera pestaña al cargar
+            }
+        });
+    </script>
+
+</body>
+
+</html>

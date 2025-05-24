@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus Barber Shop - Términos y Condiciones</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styleHeaderFooter.css">
+</head>
+
+<body>
+    <div class="overlay" onclick="toggleSidebar()"></div>
+    <button class="sidebar-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <ul>
+                <li onclick="scrollToSection('terminos')">Términos y Condiciones</li>
+                <li onclick="scrollToSection('aceptacion')">Aceptación de los términos</li>
+                <li onclick="scrollToSection('servicio')">Descripción del servicio</li>
+                <li onclick="scrollToSection('citas')">Citas y Reservas</li>
+                <li onclick="scrollToSection('garantia')">Garantía de Satisfacción</li>
+                <li onclick="scrollToSection('pago')">Métodos de pago</li>
+                <li onclick="scrollToSection('conducta')">Políticas de conducta</li>
+                <li onclick="scrollToSection('salud')">Salud e higiene</li>
+                <li onclick="scrollToSection('propiedad')">Propiedad intelectual y marca</li>
+                <li onclick="scrollToSection('datos')">Protección de datos personales</li>
+                <li onclick="scrollToSection('cambios')">Cambios en los términos</li>
+                <li onclick="scrollToSection('legislacion')">Legislación aplicable</li>
+                <li onclick="scrollToSection('contacto')">Contacto</li>
+            </ul>
+        </aside>
+
+        <div class="content">
+            <header class="header-container">
+                <div class="logo-container">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiIGZpbGw9IiNjN2ExN2EiLz4KPHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeD0iMTAiIHk9IjEwIiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xNSA1QzIwIDUgMjUgMTAgMjUgMTVTMjAgMjUgMTUgMjVTNSAyMCA1IDE1UzEwIDUgMTUgNVoiLz4KPC9zdmc+Cjwvc3ZnPgo="
+                        alt="Marcus Barber Shop Logo">
+                    <h2>Marcus Barber Shop</h2>
+                </div>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Producto</a></li>
+                        <li><a href="#">Reservas</a></li>
+                        <li><a href="#">Ubicaciones</a></li>
+                        <li><a href="#">Contactos</a></li>
+                        <li><a href="#" class="login-button">Login</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="main-content">
+                <h1 id="terminos">TÉRMINOS Y CONDICIONES DE USO Y SERVICIO</h1>
+
+                <div class="highlight">
+                    <p><strong>Marcus Barber Shop</strong></p>
+                    <p>"No eres feo, tienes mal corte."</p>
+                    <p><em>Última actualización: 20/04/2025</em></p>
+                </div>
+
+                <div class="section" id="aceptacion">
+                    <h2>1. Aceptación de los términos</h2>
+                    <p>Al acceder y disfrutar de nuestros servicios, ya sea en nuestro local físico, a través de nuestra
+                        página web, redes sociales, app móvil o vía telefónica, usted acepta cumplir con los presentes
+                        Términos y Condiciones, así como nuestras políticas internas. Si no está de acuerdo con alguno
+                        de estos términos, le sugerimos que se abstenga de utilizar nuestros servicios.</p>
+                </div>
+
+                <div class="section" id="servicio">
+                    <h2>2. Descripción del servicio</h2>
+                    <p>Marcus Barber Shop es una barbería de lujo dedicada a ofrecer servicios de cuidado personal
+                        masculino, como cortes de cabello, afeitados, arreglos de barba, tratamientos capilares y
+                        productos premium de belleza masculina. Nos enfocamos en la experiencia personalizada, el
+                        detalle artístico y la atención al cliente de primer nivel.</p>
+                </div>
+
+                <div class="section" id="citas">
+                    <h2>3. Citas y reservas</h2>
+                    <ul>
+                        <li>Las citas deben ser agendadas previamente a través de nuestros canales oficiales.</li>
+                        <li>Los horarios disponibles están sujetos a disponibilidad.</li>
+                        <li>Es responsabilidad del cliente presentarse puntualmente. La llegada con más de 15 minutos de
+                            retraso podría implicar la cancelación automática del turno.</li>
+                        <li>Las cancelaciones deben hacerse con al menos 24 horas de anticipación. De lo contrario, se
+                            aplicará una tarifa por "no show" del 50% del valor del servicio reservado.</li>
+                        <li>Nos reservamos el derecho de reprogramar citas por razones operativas, técnicas o de fuerza
+                            mayor. En tal caso, se notificará al cliente con antelación.</li>
+                    </ul>
+                </div>
+
+                <div class="section" id="garantia">
+                    <h2>4. Garantía de satisfacción</h2>
+                    <p>Creemos firmemente en nuestro lema: "No eres feo, tienes mal corte." Por ello, si el cliente no
+                        está conforme con el servicio recibido, tiene un plazo de 48 horas para solicitar un ajuste o
+                        corrección sin costo adicional. Después de ese periodo, cualquier modificación se considerará un
+                        nuevo servicio.</p>
+                </div>
+
+                <div class="section" id="pago">
+                    <h2>5. Métodos de pago</h2>
+                    <ul>
+                        <li>Aceptamos efectivo, tarjetas de crédito y débito, transferencias y pagos móviles.</li>
+                        <li>Los precios están expresados en moneda local y pueden variar sin previo aviso.</li>
+                        <li>Las tarifas son no negociables y se informarán antes de iniciar cualquier servicio.</li>
+                        <li>Promociones y descuentos no son acumulables, ni aplicables retroactivamente.</li>
+                    </ul>
+                </div>
+
+                <div class="section" id="conducta">
+                    <h2>6. Políticas de conducta</h2>
+                    <p>Para mantener un ambiente de respeto, lujo y exclusividad:</p>
+                    <ul>
+                        <li>No se permitirá el ingreso a personas en estado de ebriedad o con comportamientos agresivos.
+                        </li>
+                        <li>No se tolerarán insultos, faltas de respeto al personal ni a otros clientes.</li>
+                        <li>Nos reservamos el derecho de admisión y permanencia en nuestras instalaciones.</li>
+                    </ul>
+                </div>
+
+                <div class="section" id="salud">
+                    <h2>7. Salud e higiene</h2>
+                    <ul>
+                        <li>Todo nuestro equipo sigue protocolos estrictos de higiene, desinfección y limpieza.</li>
+                        <li>Utilizamos productos de alta gama y desechables (cuando corresponde).</li>
+                        <li>Si el cliente presenta alguna condición médica o alérgica, es su responsabilidad informarlo
+                            antes de iniciar el servicio.</li>
+                        <li>Nos reservamos el derecho de no realizar servicios si detectamos condiciones de salud que
+                            puedan representar un riesgo para el cliente o para el personal.</li>
+                    </ul>
+                </div>
+
+                <div class="section" id="propiedad">
+                    <h2>8. Propiedad intelectual y marca</h2>
+                    <p>Todo el contenido publicado por Marcus Barber Shop, incluyendo logotipo, eslogan, diseño de
+                        interiores, materiales promocionales, textos y redes sociales, están protegidos por derechos de
+                        autor y propiedad intelectual. No está permitida su reproducción, distribución o uso comercial
+                        sin autorización previa y escrita.</p>
+                </div>
+
+                <div class="section" id="datos">
+                    <h2>9. Protección de datos personales</h2>
+                    <ul>
+                        <li>Los datos que nos proporciona al registrarse, reservar o realizar pagos serán tratados
+                            conforme a la legislación vigente de protección de datos personales.</li>
+                        <li>Nos comprometemos a no compartir, vender ni divulgar su información con terceros sin su
+                            consentimiento, salvo por requerimientos legales.</li>
+                        <li>Puede solicitar la modificación o eliminación de sus datos en cualquier momento escribiendo
+                            a: (correo de contacto)</li>
+                    </ul>
+                </div>
+
+                <div class="section" id="cambios">
+                    <h2>10. Cambios en los términos</h2>
+                    <p>Marcus Barber Shop se reserva el derecho de modificar los presentes Términos y Condiciones en
+                        cualquier momento. Los cambios entrarán en vigencia inmediatamente después de su publicación. El
+                        uso continuado de nuestros servicios después de dichos cambios constituirá la aceptación de los
+                        mismos.</p>
+                </div>
+
+                <div class="section" id="legislacion">
+                    <h2>11. Legislación aplicable</h2>
+                    <p>Este acuerdo se rige por las leyes del país donde opera Marcus Barber Shop. En caso de disputas o
+                        controversias, ambas partes se comprometen a buscar primero una solución amistosa. Si no es
+                        posible, se recurrirá a los tribunales competentes.</p>
+                </div>
+
+                <div class="section" id="contacto">
+                    <h2>12. Contacto</h2>
+                    <p>Para cualquier duda, sugerencia, solicitud o reclamo, puede contactarnos a través de:</p>
+                    <ul>
+                        <li>Teléfono: [número]</li>
+                        <li>Correo electrónico: [email]</li>
+                        <li>Instagram: [@marcusbarbershop]</li>
+                        <li>Dirección: [dirección física del local]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-section">
+                        <h3>Te ayudamos</h3>
+                        <ul>
+                            <li><a href="#">Libro de reclamaciones</a></li>
+                            <li><a href="#">Atención por Whatsapp</a></li>
+                            <li><a href="#">Servicios</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Términos Legales</h3>
+                        <ul>
+                            <li><a href="#">Políticas de la Empresa</a></li>
+                            <li><a href="#">Términos y Condiciones</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Nuestra Empresa</h3>
+                        <ul>
+                            <li><a href="#">Trabaja con nosotros</a></li>
+                            <li><a href="#">Nuestra Empresa</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Medios de pago</h3>
+                        <div class="payment-methods">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA0MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzAwNTFBNSIvPgo8dGV4dCB4PSI1IiB5PSIxNSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iOCIgZm9udC1mYW1pbHk9IkFyaWFsIj5WSVNBPC90ZXh0Pgo8L3N2Zz4K"
+                                alt="Visa">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA0MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iI0VCMDAxQiIvPgo8dGV4dCB4PSI4IiB5PSIxNSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iNiIgZm9udC1mYW1pbHk9IkFyaWFsIj5NQVNURVJDQVJEPC90ZXh0Pgo8L3N2Zz4K"
+                                alt="Mastercard">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA0MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzAwNkZDRiIvPgo8dGV4dCB4PSI2IiB5PSIxNSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iNiIgZm9udC1mYW1pbHk9IkFyaWFsIj5BTUVYPC90ZXh0Pgo8L3N2Zz4K"
+                                alt="American Express">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA0MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzAwMzA4NyIvPgo8dGV4dCB4PSI4IiB5PSIxNSIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iOCIgZm9udC1mYW1pbHk9IkFyaWFsIj5QYXlQYWw8L3RleHQ+Cjwvc3ZnPgo="
+                                alt="PayPal">
+                        </div>
+
+                        <h3>Síguenos</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="copyright">
+                    <p>TODOS LOS DERECHOS RESERVADOS</p>
+                    <p>© 2025 Marcus Barber Shop — Estilo que transforma.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.querySelector('.overlay');
+
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+                // Cerrar sidebar en móvil después de hacer click
+                if (window.innerWidth <= 768) {
+                    toggleSidebar();
+                }
+            }
+        }
+
+        // Cerrar sidebar al hacer click fuera de él
+        document.addEventListener('click', function (event) {
+            const sidebar = document.getElementById('sidebar');
+            const toggle = document.querySelector('.sidebar-toggle');
+            const overlay = document.querySelector('.overlay'); // Asegúrate de tener esta referencia
+
+            if (!sidebar.contains(event.target) && !toggle.contains(event.target)) {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
