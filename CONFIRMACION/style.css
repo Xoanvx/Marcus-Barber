@@ -178,12 +178,12 @@ body {
     padding: 40px 40px;
     text-align: left;
     color: #444343;
-
 }
 
 .sugerencias h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    margin-left: 50px;
 }
 
 .sugerencias-contenedor {
@@ -194,11 +194,11 @@ body {
 }
 
 .producto-sugerido {
-    border: 1px solid #ccc;
+    border: 1px solid #DEDFE1;
     padding: 15px;
     width: 200px;
     text-align: left;
-    background-color: white;
+    background-color: none;
     position: relative;
 }
 
@@ -211,7 +211,7 @@ body {
 
 
 .producto-sugerido img {
-  margin-top: 20px; /* Puedes ajustar este valor */
+  margin-top: 20px;
   max-width: 100%;
   height: auto;
   display: block;
