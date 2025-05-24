@@ -83,21 +83,6 @@ body {
   border-radius: 4px;
 }
 
-.control-cantidad {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-}
-
-.control-cantidad button {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
 .control-cantidad p {
   padding: 0 7px;
   font-weight: bold;
