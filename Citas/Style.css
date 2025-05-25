@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  padding: 2rem;
+}
+
+.titulo h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0;
+  color: black;
+  font-family: 'Inknut Antiqua', serif;
+}
+
+.Cuadro {
+  background-color: #E2E2E2;
+  padding: 2rem;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.párrafo {
+  color: black;
+  font-family: 'Inknut Antiqua', serif;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-size: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.Cajitas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+}
+
+.Cajitas h1 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.Cajitas input,
+.Cajitas select {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+}
+
+.Caja5 {
+  grid-column: 1 / -1;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+  resize: none;
+}
+
+.submit-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.boton-reserva {
+  background-color: #a36f5a;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.boton-reserva:hover {
+  background-color: #8d5948;
+}
+
+.barber-icon-cita {
+  width: 50px;
+  height: 50px;
+}
+footer{
+    margin-top:50px
+}
