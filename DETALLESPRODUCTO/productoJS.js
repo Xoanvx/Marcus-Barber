@@ -43,6 +43,8 @@ tabButtons.forEach((button) => {
 
 //PARTE 2
 
+//PARTE 2 - Sistema de carrito mejorado
+
 // Sistema de carrito flotante
 class FloatingCart {
   constructor() {
@@ -66,15 +68,45 @@ class FloatingCart {
     });
   }
 
+  // Función genérica para extraer datos del producto actual
+  extractProductData() {
+    // Generar ID único basado en el título del producto
+    const productTitle = document.querySelector(".product-title").textContent.trim();
+    const productId = this.generateProductId(productTitle);
+    
+    // Extraer precio (remover "S/ " y convertir a número)
+    const priceText = document.querySelector(".product-price").textContent.trim();
+    const price = parseFloat(priceText.replace("S/", "").replace(",", "").trim());
+    
+    // Extraer imagen principal
+    const image = document.querySelector("#mainImage").src;
+    
+    return {
+      id: productId,
+      name: productTitle,
+      price: price,
+      image: image
+    };
+  }
+
+  // Generar ID único para el producto
+  generateProductId(title) {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, '') // Remover caracteres especiales
+      .replace(/\s+/g, '-') // Reemplazar espacios con guiones
+      .substring(0, 50); // Limitar longitud
+  }
+
   addToCart() {
     const quantity = parseInt(document.querySelector(".quantity-input").value);
-    const product = {
-      id: "gel-afeitar-dorsh",
-      name: "GEL DE AFEITAR 1000ml S12 VERDANT SHIELD DORSH",
-      price: 23.0,
-      image:
-        "https://sanbarberperu.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-01-29-at-5.13.09-PM-1.jpeg",
-    };
+    const product = this.extractProductData();
+
+    // Validar que se extrajo correctamente
+    if (!product.name || !product.price || !product.image) {
+      alert("Error al agregar el producto. Inténtalo de nuevo.");
+      return;
+    }
 
     if (this.cart[product.id]) {
       this.cart[product.id].quantity += quantity;
@@ -84,7 +116,7 @@ class FloatingCart {
 
     localStorage.setItem("barbershop_cart", JSON.stringify(this.cart));
     this.updateCartDisplay();
-    this.showAddedNotification();
+    this.showAddedNotification(product.name);
   }
 
   updateCartDisplay() {
@@ -101,8 +133,13 @@ class FloatingCart {
     }
   }
 
-  showAddedNotification() {
+  showAddedNotification(productName) {
+    // Animación del carrito
     this.floatingCart.style.animation = "bounce 0.6s ease";
+    
+    // Mostrar notificación
+    alert(`✅ "${productName}" agregado al carrito`);
+    
     setTimeout(() => {
       this.floatingCart.style.animation = "";
     }, 600);

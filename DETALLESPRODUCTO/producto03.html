@@ -231,50 +231,13 @@
         <p>© 2025 Marcus Barber Shop — Estilo que transforma.</p>
     </div>
 
-    <script>
-        // Funcionalidad para cambiar imagen principal
-        const thumbnails = document.querySelectorAll('.thumbnail');
-        const mainImage = document.getElementById('mainImage');
+    <script src="../DETALLESPRODUCTO/productoJS.js"></script>
 
-        thumbnails.forEach(thumbnail => {
-            thumbnail.addEventListener('click', function () {
-                // Remover clase active de todos los thumbnails
-                thumbnails.forEach(t => t.classList.remove('active'));
-                // Agregar clase active al thumbnail clickeado
-                this.classList.add('active');
-                // Cambiar imagen principal
-                const newSrc = this.querySelector('img').src;
-                mainImage.src = newSrc;
-            });
-        });
-
-        // Funcionalidad para cantidad
-        const quantityInput = document.querySelector('.quantity-input');
-        const minusBtn = document.querySelector('.quantity-btn:first-child');
-        const plusBtn = document.querySelector('.quantity-btn:last-child');
-
-        minusBtn.addEventListener('click', function () {
-            let currentValue = parseInt(quantityInput.value);
-            if (currentValue > 1) {
-                quantityInput.value = currentValue - 1;
-            }
-        });
-
-        plusBtn.addEventListener('click', function () {
-            let currentValue = parseInt(quantityInput.value);
-            quantityInput.value = currentValue + 1;
-        });
-
-        // Funcionalidad para tabs
-        const tabButtons = document.querySelectorAll('.tab-button');
-
-        tabButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    </script>
+    <!-- Sistema de carrito flotante -->
+    <div id="floating-cart" class="floating-cart hidden">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count" class="cart-count">0</span>
+    </div>
 </body>
 
 </html>
