@@ -671,4 +671,25 @@
                 loadingBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
                 loadingBtn.disabled = true;
                 
-                setTimeout(() => {
+                setTimeout(() => {alert(`Pago realizado con éxito con ${selectedMethod.value.toUpperCase()} por un total de ${total}`);
+                    
+                    // Vaciar carrito y actualizar almacenamiento
+                    localStorage.removeItem('barbershop_cart');
+                    cartManager.cart = {};
+                    cartManager.renderCart();
+                    cartManager.updateFloatingCart();
+
+                    // Restaurar botón
+                    loadingBtn.innerHTML = '<i class="fas fa-lock"></i> Proceder al Pago';
+                    loadingBtn.disabled = true;
+
+                }, 2000); // Simula una espera de 2 segundos
+            } else {
+                alert('Por favor, selecciona un método de pago y asegúrate de tener productos en el carrito.');
+            }
+        }
+
+        const cartManager = new CartManager();
+    </script>
+</body>
+</html>
