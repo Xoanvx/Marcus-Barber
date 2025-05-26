@@ -236,6 +236,167 @@
     }
   }
 }
+.Expertos{
+  background-color: #000000;
+  padding:  20px;
+  
+
+.TextoExpertos{
+  display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  h2{
+    font-size: 28px;
+  }
+  p{
+      font-size: 1rem;
+      font-weight: 100;
+      margin-top: 10px;
+    }
+  } 
+}
+.Cuadro_maestro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.cuadro_estilista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cuadro_estilista img {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.cuadro_cambio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cuadro_cambio img {
+ margin-top: 20px;
+  width: 230px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nombre_estilista {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  margin-top: 15px;
+  color: #4b4949;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.Cambios{
+  background-color: #242424;
+  padding:  20px;
+.TextoCambios{
+  display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  h2{
+    font-size: 28px;
+  }
+  p{
+      font-size: 1rem;
+      font-weight: 100;
+      margin-top: 10px;
+    }
+  } 
+}
+.Ventas{
+  background-color: white;
+  padding:  20px;
+.TextoVentas{
+  display: flex;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  h2{
+    font-size: 28px;
+  }
+  p{
+      font-size: 1rem;
+      font-weight: 100;
+      margin-top: 10px;
+    }
+  } 
+}
+.top-ventas {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f8f8f8;
+}
+
+.top-ventas h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #222;
+  border-bottom: 3px solid #c19c64;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.Cuadro_ventas {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.producto {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  width: 250px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  h3{
+  font-size: 1.2em;
+  margin: 15px 0 5px;
+  color: #333;
+  }
+  img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  }
+  p {
+  font-size: 1em;
+  color: #888;
+  }
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+}
+.contenedor-boton {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding-right: 40px;
+}
 
 .imgsArte {
   width: 100%;
@@ -361,5 +522,4 @@
       width: 50%;
     }
   }
-
 }
