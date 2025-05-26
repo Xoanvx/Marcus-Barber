@@ -215,6 +215,69 @@
   display: none;
 }
 
+.Arte{
+  background-color: #24231F;
+  padding: 20px;
+
+  .textoArte{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    h2{
+      font-size: 2rem;
+    }
+    p{
+      font-size: 1rem;
+      font-weight: 100;
+      margin-top: 10px;
+    }
+  }
+}
+
+.imgsArte {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch; 
+
+  .cuadroExtra, .cuadro {
+    width: 25%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cuadro img,
+  .cuadroExtra img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 25px;
+  }
+
+  .cuadro {
+    .subcuadros {
+      width: 100%;
+      height: 48%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      .mini {
+        width: 48%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+
 @media (max-width: 1000px) {
 
   .herramientas{
@@ -222,7 +285,6 @@
   }
 
   .car2{
-    /* background-color: green; */
     width: 80%;
   }
 
@@ -279,8 +341,25 @@
     button:hover {
       background-color: #6b441d38;
       cursor: pointer;
-      /* font-weight: 900; */
       font-size: 4vw;
     }
   }
+
+  .imgsArte{ /*cuadro rojo*/
+    height: auto; /*alto*/
+    flex-direction: column; 
+    align-items: center;
+    padding: 20px;
+    
+    .cuadro{ /*cuadro verde*/
+      width: 95%;
+      height: 900px;
+      max-height: 300px;
+    }
+
+    .cuadroExtra{ /*cuadro morado*/
+      width: 50%;
+    }
+  }
+
 }

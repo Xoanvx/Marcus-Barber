@@ -64,7 +64,7 @@ img {
 .vision {
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 1) 20%,
+    rgb(49, 27, 13) 20%,
     rgba(0, 0, 0, 1) 90%,
     #f2f2f2 100%
   );
