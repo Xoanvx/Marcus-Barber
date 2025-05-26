@@ -500,3 +500,106 @@
 
 /* Carrito flotante animado */
 
+
+
+ .Ventas{
+  background-color: white;
+  padding:  20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .TextoVentas{
+    display: flex;
+      flex-direction: column;
+      color: rgb(0, 0, 0);
+      padding: 20px;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    h2{
+      font-size: 28px;
+    }
+    p{
+        font-size: 1rem;
+        font-weight: 100;
+        margin-top: 10px;
+      }
+    } 
+}
+
+
+/*EXTRAIDO DE PRODUCTOS CSS*/
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas por defecto */
+  gap: 20px;
+  width: 100%;
+  max-width: 700px; /* Ancho máximo del grid */
+  justify-items: center; /* Centra los items dentro de sus celdas */
+}
+
+
+.product {
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.product:hover{
+    width: 220px;
+    h4{
+      font-size: 21px;
+      transition: all 0.3s ease;
+    }
+
+    .bordeado{
+      box-shadow: 0px 20px 21px -15px rgb(100, 73, 49);
+      transition: all 0.3s ease;
+    }
+}
+
+.bordeado{
+  background-color: rgb(255, 255, 255);
+  border: 10px rgb(255, 255, 255) solid;
+  box-shadow: 0px 10px 21px -15px rgb(100, 73, 49);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  
+}
+
+.product h3 {
+  font-size: 16px;
+  text-shadow: 0px 2px 5px rgba(49, 49, 49, 0.521);
+  margin: 10px 0;
+  color: black;
+}
+
+.product h4 {
+  font-weight: 300px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  margin: 10px 0;
+  color: #875E4B;
+}
+
+.product p {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas para pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr; /* 1 columna para pantallas pequeñas */
+  }
+}
