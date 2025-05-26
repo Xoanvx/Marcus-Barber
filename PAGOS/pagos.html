@@ -1,372 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito de Compras - Marcus Barber Shop</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styleHeaderFooter.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            min-height: 100vh;
-        }
+    <link rel="stylesheet" href="../PAGOS/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
-        .main-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            min-height: calc(100vh - 200px);
-        }
+  </head>
 
-        .page-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #c7a17a;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .page-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #cccccc;
-            margin-bottom: 50px;
-        }
-
-        .cart-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .cart-items-section {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(199, 161, 122, 0.2);
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #c7a17a;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .empty-cart {
-            text-align: center;
-            padding: 60px 20px;
-            color: #888;
-        }
-
-        .empty-cart i {
-            font-size: 4rem;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .empty-cart h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #666;
-        }
-
-        .empty-cart p {
-            font-size: 1rem;
-            margin-bottom: 30px;
-        }
-
-        .continue-shopping-btn {
-            background: linear-gradient(135deg, #c7a17a 0%, #a08a6b 100%);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .continue-shopping-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(199, 161, 122, 0.3);
-        }
-
-        .cart-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(199, 161, 122, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .cart-item:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(199, 161, 122, 0.3);
-        }
-
-        .item-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 8px;
-            object-fit: cover;
-            border: 2px solid rgba(199, 161, 122, 0.3);
-        }
-
-        .item-info {
-            flex: 1;
-        }
-
-        .item-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 5px;
-        }
-
-        .item-price {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #c7a17a;
-        }
-
-        .quantity-controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin: 15px 0;
-        }
-
-        .quantity-btn {
-            width: 35px;
-            height: 35px;
-            border: 2px solid #c7a17a;
-            background: transparent;
-            color: #c7a17a;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .quantity-btn:hover {
-            background: #c7a17a;
-            color: white;
-            transform: scale(1.1);
-        }
-
-        .quantity-display {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #ffffff;
-            min-width: 30px;
-            text-align: center;
-        }
-
-        .remove-btn {
-            background: #e74c3c;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .remove-btn:hover {
-            background: #c0392b;
-            transform: translateY(-2px);
-        }
-
-        .cart-summary {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(199, 161, 122, 0.2);
-            height: fit-content;
-            position: sticky;
-            top: 20px;
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(199, 161, 122, 0.2);
-        }
-
-        .summary-row:last-child {
-            border-bottom: none;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #c7a17a;
-            padding-top: 20px;
-        }
-
-        .payment-methods {
-            margin: 30px 0;
-        }
-
-        .payment-method {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 2px solid rgba(199, 161, 122, 0.2);
-            border-radius: 10px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .payment-method:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(199, 161, 122, 0.4);
-        }
-
-        .payment-method.selected {
-            background: rgba(199, 161, 122, 0.1);
-            border-color: #c7a17a;
-        }
-
-        .payment-method input[type="radio"] {
-            accent-color: #c7a17a;
-        }
-
-        .payment-info {
-            flex: 1;
-        }
-
-        .payment-brand {
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 2px;
-        }
-
-        .payment-desc {
-            font-size: 0.9rem;
-            color: #cccccc;
-        }
-
-        .checkout-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #c7a17a 0%, #a08a6b 100%);
-            color: white;
-            padding: 18px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .checkout-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(199, 161, 122, 0.4);
-        }
-
-        .checkout-btn:disabled {
-            background: #666;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        .floating-cart {
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: #c7a17a;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            font-size: 20px;
-        }
-
-        .floating-cart:hover {
-            background-color: #a08a6b;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .floating-cart.hidden {
-            display: none;
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: #e74c3c;
-            color: white;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            .cart-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .page-title {
-                font-size: 2rem;
-            }
-            
-            .cart-item {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .quantity-controls {
-                justify-content: center;
-            }
-        }
-    </style>
-</head>
-
-<body>
+  <body>
     <header class="header-container">
         <a href="../INICIO/index.html">
             <div class="logo-container">
@@ -390,307 +36,246 @@
 
     <!-- Carrito flotante -->
     <div id="floating-cart" class="floating-cart hidden">
-        <i class="fas fa-shopping-cart"></i>
-        <span id="cart-count" class="cart-count">0</span>
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count" class="cart-count">0</span>
     </div>
 
     <div class="main-container">
-        <h1 class="page-title">Tu Carrito de Compras</h1>
-        <p class="page-subtitle">Revisa tus productos antes de finalizar la compra</p>
+      <h1 class="page-title">Tu Carrito de Compras</h1>
+      <p class="page-subtitle">
+        Revisa tus productos antes de finalizar la compra
+      </p>
 
-        <div class="cart-container">
-            <div class="cart-items-section">
-                <h2 class="section-title">
-                    <i class="fas fa-shopping-bag"></i>
-                    Productos en tu carrito
-                </h2>
-                <div id="cart-items-container">
-                    <div class="empty-cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <h3>Tu carrito está vacío</h3>
-                        <p>Agrega algunos productos increíbles para comenzar</p>
-                        <a href="../PRODUCTOS/productos.html" class="continue-shopping-btn">
-                            Continuar Comprando
-                        </a>
-                    </div>
-                </div>
+      <div class="cart-container">
+        <div class="cart-items-section">
+          <h2 class="section-title">
+            <i class="fas fa-shopping-bag"></i>
+            Productos en tu carrito
+          </h2>
+          <div id="cart-items-container">
+            <div class="empty-cart">
+              <i class="fas fa-shopping-cart"></i>
+              <h3>Tu carrito está vacío</h3>
+              <p>Agrega algunos productos increíbles para comenzar</p>
+              <a
+                href="../PRODUCTOS/productos.html"
+                class="continue-shopping-btn"
+              >
+                Continuar Comprando
+              </a>
             </div>
-
-            <div class="cart-summary">
-                <h2 class="section-title">
-                    <i class="fas fa-receipt"></i>
-                    Resumen del pedido
-                </h2>
-                
-                <div class="summary-row">
-                    <span>Subtotal:</span>
-                    <span id="subtotal">S/ 0.00</span>
-                </div>
-                <div class="summary-row">
-                    <span>Envío:</span>
-                    <span id="shipping">Gratis</span>
-                </div>
-                <div class="summary-row">
-                    <span>Total:</span>
-                    <span id="total">S/ 0.00</span>
-                </div>
-
-                <div class="payment-methods">
-                    <h3 style="color: #c7a17a; margin-bottom: 20px; font-size: 1.1rem;">
-                        <i class="fas fa-credit-card"></i> Métodos de Pago
-                    </h3>
-                    
-                    <div class="payment-method selected" onclick="selectPaymentMethod(this)">
-                        <input type="radio" name="payment" value="mastercard" checked>
-                        <div class="payment-info">
-                            <div class="payment-brand">Mastercard</div>
-                            <div class="payment-desc">Tarjeta de Crédito/Débito</div>
-                        </div>
-                    </div>
-                    
-                    <div class="payment-method" onclick="selectPaymentMethod(this)">
-                        <input type="radio" name="payment" value="visa">
-                        <div class="payment-info">
-                            <div class="payment-brand">Visa</div>
-                            <div class="payment-desc">Tarjeta de Crédito/Débito</div>
-                        </div>
-                    </div>
-                    
-                    <div class="payment-method" onclick="selectPaymentMethod(this)">
-                        <input type="radio" name="payment" value="yape">
-                        <div class="payment-info">
-                            <div class="payment-brand">Yape</div>
-                            <div class="payment-desc">Billetera Digital</div>
-                        </div>
-                    </div>
-                    
-                    <div class="payment-method" onclick="selectPaymentMethod(this)">
-                        <input type="radio" name="payment" value="plin">
-                        <div class="payment-info">
-                            <div class="payment-brand">Plin</div>
-                            <div class="payment-desc">Billetera Digital</div>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="checkout-btn" id="checkout-btn" onclick="processPayment()">
-                    <i class="fas fa-lock"></i> Proceder al Pago
-                </button>
-            </div>
+          </div>
         </div>
+
+        <div class="cart-summary">
+          <h2 class="section-title">
+            <i class="fas fa-receipt"></i>
+            Resumen del pedido
+          </h2>
+
+          <div class="summary-row">
+            <span>Subtotal:</span>
+            <span id="subtotal">S/ 0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Envío:</span>
+            <span id="shipping">Gratis</span>
+          </div>
+          <div class="summary-row">
+            <span>Total:</span>
+            <span id="total">S/ 0.00</span>
+          </div>
+
+          <div class="payment-methods">
+            <h3 style="color: #c7a17a; margin-bottom: 20px; font-size: 1.1rem">
+              Métodos de Pago
+            </h3>
+
+            <div
+              class="payment-method selected"
+              onclick="selectPaymentMethod(this, 'card')"
+            >
+              <input type="radio" name="payment" value="card" checked />
+              <div class="payment-info">
+                <div class="payment-brand">Tarjeta de Crédito/Débito</div>
+                <div class="payment-desc">
+                  Visa, MasterCard, American Express
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="payment-method"
+              onclick="selectPaymentMethod(this, 'digital')"
+            >
+              <input type="radio" name="payment" value="yape" />
+              <div class="payment-info">
+                <div class="payment-brand">Yape</div>
+                <div class="payment-desc">Billetera Digital</div>
+              </div>
+            </div>
+
+            <div
+              class="payment-method"
+              onclick="selectPaymentMethod(this, 'digital')"
+            >
+              <input type="radio" name="payment" value="plin" />
+              <div class="payment-info">
+                <div class="payment-brand">Plin</div>
+                <div class="payment-desc">Billetera Digital</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario de Tarjeta -->
+          <div id="card-form" class="card-form">
+            <h4 class="form-title">
+              <i class="fas fa-credit-card"></i> Información de la Tarjeta
+            </h4>
+
+            <div class="form-group">
+              <label for="card-number">Número de Tarjeta</label>
+              <input
+                type="text"
+                id="card-number"
+                placeholder="1234 5678 9012 3456"
+                maxlength="19"
+              />
+              <div class="card-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="card-expiry">Fecha de Vencimiento</label>
+                <input
+                  type="text"
+                  id="card-expiry"
+                  placeholder="MM/AA"
+                  maxlength="5"
+                />
+              </div>
+              <div class="form-group">
+                <label for="card-cvv">CVV</label>
+                <input
+                  type="text"
+                  id="card-cvv"
+                  placeholder="123"
+                  maxlength="4"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="card-name">Nombre del Titular</label>
+              <input
+                type="text"
+                id="card-name"
+                placeholder="Nombre como aparece en la tarjeta"
+                maxlength="50"
+              />
+            </div>
+          </div>
+
+          <!-- QR Codes para Billeteras Digitales -->
+          <div id="qr-section" class="qr-section hidden">
+            <h4 class="form-title">
+              <i class="fas fa-qrcode"></i> Escanea el código QR
+            </h4>
+
+            <div class="qr-container">
+              <div id="yape-qr" class="qr-code hidden">
+                <img
+                  src="/placeholder.svg?height=200&width=200"
+                  alt="Código QR Yape"
+                />
+                <p>Escanea con tu app Yape</p>
+              </div>
+
+              <div id="plin-qr" class="qr-code hidden">
+                <img
+                  src="/placeholder.svg?height=200&width=200"
+                  alt="Código QR Plin"
+                />
+                <p>Escanea con tu app Plin</p>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="checkout-btn"
+            id="checkout-btn"
+            onclick="processPayment()"
+          >
+            <i class="fas fa-lock"></i> Proceder al Pago
+          </button>
+        </div>
+      </div>
     </div>
 
     <footer class="footer-container">
-        <div class="footer-section">
-            <h3>Te ayudamos</h3>
-            <ul class="footer-list">
-                <li><a href="../RECLAMACIONES/reclamaciones.html">Libro de reclamaciones</a></li>
-                <li><a href="#">Atención por Whatsapp</a></li>
-                <li><a href="../SERVICIOS/servicios.html">Servicios</a></li>
-            </ul>
+      <div class="footer-section">
+        <h3>Te ayudamos</h3>
+        <ul class="footer-list">
+          <li>
+            <a href="../RECLAMACIONES/reclamaciones.html"
+              >Libro de reclamaciones</a
+            >
+          </li>
+          <li><a href="#">Atención por Whatsapp</a></li>
+          <li><a href="../SERVICIOS/servicios.html">Servicios</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Términos Legales</h3>
+        <ul class="footer-list">
+          <li>
+            <a href="../POLITICAS/politicas.html">Políticas de la Empresa</a>
+          </li>
+          <li>
+            <a href="../TERMINOS/terminos.html">Términos y Condiciones</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Nuestra Empresa</h3>
+        <ul class="footer-list">
+          <li><a href="../TRABAJA/trabaja.html">Trabaja con nosotros</a></li>
+          <li><a href="../NOSOTROS/nosotros.html">Nuestra Empresa</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Medios de pago</h3>
+        <div class="payment-methods">
+          <img src="../imag/visa.png" alt="Visa" />
+          <img src="../imag/mastercard.png" alt="Mastercard" />
+          <img src="../imag/american.png" alt="American Express" />
+          <img src="../imag/pagoefectivo.png" alt="Pago Efectivo" />
         </div>
 
-        <div class="footer-section">
-            <h3>Términos Legales</h3>
-            <ul class="footer-list">
-                <li><a href="../POLITICAS/politicas.html">Políticas de la Empresa</a></li>
-                <li><a href="../TERMINOS/terminos.html">Términos y Condiciones</a></li>
-            </ul>
+        <h3 class="siguenos">Síguenos</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
         </div>
-
-        <div class="footer-section">
-            <h3>Nuestra Empresa</h3>
-            <ul class="footer-list">
-                <li><a href="../TRABAJA/trabaja.html">Trabaja con nosotros</a></li>
-                <li><a href="../NOSOTROS/nosotros.html">Nuestra Empresa</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>Medios de pago</h3>
-            <div class="payment-methods">
-                <img src="../imag/visa.png" alt="Visa" />
-                <img src="../imag/mastercard.png" alt="Mastercard" />
-                <img src="../imag/american.png" alt="American Express" />
-                <img src="../imag/pagoefectivo.png" alt="Pago Efectivo" />
-            </div>
-
-            <h3 class="siguenos">Síguenos</h3>
-            <div class="social-icons">
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            </div>
-        </div>
+      </div>
     </footer>
 
     <div class="copyright">
-        <p>TODOS LOS DERECHOS RESERVADOS</p>
-        <p>© 2025 Marcus Barber Shop — Estilo que transforma.</p>
+      <p>TODOS LOS DERECHOS RESERVADOS</p>
+      <p>© 2025 Marcus Barber Shop — Estilo que transforma.</p>
     </div>
-
-    <script>
-        class CartManager {
-            constructor() {
-                this.cart = JSON.parse(localStorage.getItem('barbershop_cart') || '{}');
-                this.floatingCart = document.getElementById('floating-cart');
-                this.cartCount = document.getElementById('cart-count');
-                this.cartItemsContainer = document.getElementById('cart-items-container');
-                this.subtotalElement = document.getElementById('subtotal');
-                this.totalElement = document.getElementById('total');
-                this.checkoutBtn = document.getElementById('checkout-btn');
-                
-                this.init();
-            }
-
-            init() {
-                this.renderCart();
-                this.updateFloatingCart();
-                this.bindEvents();
-            }
-
-            bindEvents() {
-                this.floatingCart.addEventListener('click', () => {
-                    window.location.reload();
-                });
-            }
-
-            renderCart() {
-                const cartItems = Object.values(this.cart);
-                
-                if (cartItems.length === 0) {
-                    this.showEmptyCart();
-                    return;
-                }
-
-                this.cartItemsContainer.innerHTML = cartItems.map(item => `
-                    <div class="cart-item" data-id="${item.id}">
-                        <img src="${item.image}" alt="${item.name}" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">${item.name}</div>
-                            <div class="item-price">S/ ${item.price.toFixed(2)}</div>
-                            <div class="quantity-controls">
-                                <button class="quantity-btn decrease-btn" onclick="cartManager.updateQuantity('${item.id}', -1)">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <span class="quantity-display">${item.quantity}</span>
-                                <button class="quantity-btn increase-btn" onclick="cartManager.updateQuantity('${item.id}', 1)">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </div>
-                            <button class="remove-btn" onclick="cartManager.removeItem('${item.id}')">
-                                <i class="fas fa-trash"></i> Eliminar
-                            </button>
-                        </div>
-                    </div>
-                `).join('');
-
-                this.updateSummary();
-            }
-
-            showEmptyCart() {
-                this.cartItemsContainer.innerHTML = `
-                    <div class="empty-cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <h3>Tu carrito está vacío</h3>
-                        <p>Agrega algunos productos increíbles para comenzar</p>
-                        <a href="../PRODUCTOS/productos.html" class="continue-shopping-btn">
-                            Continuar Comprando
-                        </a>
-                    </div>
-                `;
-
-                this.subtotalElement.textContent = 'S/ 0.00';
-                this.totalElement.textContent = 'S/ 0.00';
-                this.checkoutBtn.disabled = true;
-            }
-
-            updateQuantity(itemId, change) {
-                if (this.cart[itemId]) {
-                    this.cart[itemId].quantity += change;
-                    
-                    if (this.cart[itemId].quantity <= 0) {
-                        delete this.cart[itemId];
-                    }
-                    
-                    this.saveCart();
-                    this.renderCart();
-                    this.updateFloatingCart();
-                }
-            }
-
-            removeItem(itemId) {
-                if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
-                    delete this.cart[itemId];
-                    this.saveCart();
-                    this.renderCart();
-                    this.updateFloatingCart();
-                }
-            }
-
-            updateSummary() {
-                const subtotal = Object.values(this.cart).reduce((sum, item) => 
-                    sum + (item.price * item.quantity), 0
-                );
-
-                this.subtotalElement.textContent = `S/ ${subtotal.toFixed(2)}`;
-                this.totalElement.textContent = `S/ ${subtotal.toFixed(2)}`;
-                this.checkoutBtn.disabled = subtotal === 0;
-            }
-
-            updateFloatingCart() {
-                const totalItems = Object.values(this.cart).reduce((sum, item) => sum + item.quantity, 0);
-                
-                if (totalItems > 0) {
-                    this.floatingCart.classList.remove('hidden');
-                    this.cartCount.textContent = totalItems;
-                } else {
-                    this.floatingCart.classList.add('hidden');
-                }
-            }
-
-            saveCart() {
-                localStorage.setItem('barbershop_cart', JSON.stringify(this.cart));
-            }
-        }
-
-        function selectPaymentMethod(element) {
-            document.querySelectorAll('.payment-method').forEach(method => 
-                method.classList.remove('selected')
-            );
-            element.classList.add('selected');
-            element.querySelector('input[type="radio"]').checked = true;
-        }
-
-        function processPayment() {
-            const selectedMethod = document.querySelector('input[name="payment"]:checked');
-            const total = document.getElementById('total').textContent;
-            
-            if (selectedMethod && !document.getElementById('checkout-btn').disabled) {
-                // Simulación de proceso de pago
-                const loadingBtn = document.getElementById('checkout-btn');
-                loadingBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
-                loadingBtn.disabled = true;
-                
-                setTimeout(() => {alert(`Pago realizado con éxito con ${selectedMethod.value.toUpperCase()} por un total de ${total}`);
-                    
-                    // Vaciar carrito y actualizar almacenamiento
-                    localStorage.removeItem('barbershop_cart');
-                    cartManager.cart = {};
-                    cartManager.renderCart();
-                    cartManager.updateFloatingCart();
-
-                    // Restaurar botón
-                    loadingBtn.innerHTML = '<i class="fas fa-lock"></i> Proceder al Pago';
-                    loadingBtn.disabled = true;
-
-                }, 2000); // Simula una espera de 2 segundos
-            } else {
-                alert('Por favor, selecciona un método de pago y asegúrate de tener productos en el carrito.');
-            }
-        }
-
-        const cartManager = new CartManager();
-    </script>
-</body>
+    <script src="../PAGOS/pagos.html"></script>
+  </body>
 </html>
