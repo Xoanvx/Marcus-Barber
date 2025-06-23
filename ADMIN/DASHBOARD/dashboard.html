@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styleHeaderFooter.css">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+  <header class="header-container">
+    <a href="/">
+      <div class="logo-container"></div>
+      <div class="logo-container">
+        <img src="../../imag/marcuss.png" alt="Marcus Barber Shop Logo">
+        <div class="brand-name">
+          Marcus<br>
+          Barber Shop
+        </div>
+      </div>
+      <ul class="menu">
+        <li><a href="/">INICIO</a></li>
+        <li><a href="../PRODUCTOS/productos.html">PRODUCTO</a></li>
+        <li><a href="../RESERVAS/reservas.html">RESERVAS</a></li>
+        <li><a href="../UBICACIONES/ubicaciones.html">UBICACIONES</a></li>
+        <li><a href="../NOSOTROS/NOSOTROS.HTML">NOSOTROS</a></li>
+        <li><a href="./SERVICIOS/servicios.html">SERVICIOS</a></li>
+        <li class="login-button"><a href="../LOGIN/login.html">LOGIN</a></li>
+      </ul>
+  </header>
+
+  <div class="titulo">
+    <h1>Dashboard Administrativo</h1>
+    <p>Resumen general de Marcus Barber</p>
+  </div>
+
+  <div class="contenedor-resumen">
+    <div class="resumen-ventas">
+      <div class="cuadro">
+        <div class="contenido">
+          <div class="izquierda">
+            <p class="titulo">Ingresos Totales</p>
+            <p class="monto">S/ 4,230.70</p>
+          </div>
+          <div class="derecha">
+            <span class="material-symbols-outlined">attach_money</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="resumen-ventas">
+      <div class="cuadro">
+        <div class="contenido">
+          <div class="izquierda">
+            <p class="titulo">Total de Ventas</p>
+            <p class="monto">1,205</p>
+          </div>
+          <div class="derecha">
+            <span class="material-symbols-outlined">shopping_cart</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="estadisticas">
+    <div class="productos-vendidos">
+      <div class="titulo">
+        <span class="material-symbols-outlined">package_2</span>
+        <span>Top 5 Productos Más Vendidos</span>
+        <p>Productos ordenados por ingresos generados</p>
+      </div>
+
+      <div>
+        <ol>
+          <li>
+            <div class="product-info">
+              <img src="../../imag/producto_top1.jpeg" alt="Smartphone Pro Max">
+              <div>
+                <strong>Smartphone Pro Max</strong>
+                <p>245 unidades vendidas</p>
+              </div>
+            </div>
+            <div class="product-sales">
+              <p>$122,500</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="product-info">
+              <img src="../../imag/producto_top1.jpeg" alt="Smartphone Pro Max">
+              <div>
+                <strong>Laptop Gaming Elite</strong>
+                <p>89 unidades vendidas</p>
+              </div>
+            </div>
+            <div class="product-sales">
+              <p>$89,000</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="product-info">
+              <img src="../../imag/producto_top1.jpeg" alt="Smartphone Pro Max">
+              <div>
+                <strong>Auriculares Wireless</strong>
+                <p>456 unidades vendidas</p>
+              </div>
+            </div>
+            <div class="product-sales">
+              <p>$45,600</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="product-info">
+              <img src="../../imag/producto_top1.jpeg" alt="Smartphone Pro Max">
+              <div>
+                <strong>Tablet Ultra</strong>
+                <p>123 unidades vendidas</p>
+              </div>
+            </div>
+            <div class="product-sales">
+              <p>$36,900</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="product-info">
+              <img src="../../imag/producto_top1.jpeg" alt="Smartphone Pro Max">
+              <div>
+                <strong>Smartwatch Series X</strong>
+                <p>178 unidades vendidas</p>
+              </div>
+            </div>
+            <div class="product-sales">
+              <p>$35,600</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="ultimos-pedidos">
+      <div class="titulo">
+        <span class="material-symbols-outlined">group</span>
+        <span> Últimos Pedidos</span>
+        <p>Pedidos más recientes realizados en tu tienda</p>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Pedido</th>
+            <th>Cliente</th>
+            <th>Estado</th>
+            <th>Monto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Pedido">
+              <strong>ORD-001</strong><br />14/1/2024
+            </td>
+            <td data-label="Cliente">
+              Ana García<br /><small>3 artículos</small>
+            </td>
+            <td data-label="Estado"><span class="estado pendiente">Pendiente</span></td>
+            <td data-label="Monto">$299.99</td>
+          </tr>
+          <tr>
+            <td data-label="Pedido">
+              <strong>ORD-002</strong><br />14/1/2024
+            </td>
+            <td data-label="Cliente">
+              Carlos López<br /><small>1 artículo</small>
+            </td>
+            <td data-label="Estado"><span class="estado pendiente">Pendiente</span></td>
+            <td data-label="Monto">$1299.99</td>
+          </tr>
+          <tr>
+            <td data-label="Pedido">
+              <strong>ORD-003</strong><br />13/1/2024
+            </td>
+            <td data-label="Cliente">
+              María Rodríguez<br /><small>2 artículos</small>
+            </td>
+            <td data-label="Estado"><span class="estado proceso">En Proceso</span></td>
+            <td data-label="Monto">$89.99</td>
+          </tr>
+          <tr>
+            <td data-label="Pedido">
+              <strong>ORD-004</strong><br />13/1/2024
+            </td>
+            <td data-label="Cliente">
+              Juan Martínez<br /><small>4 artículos</small>
+            </td>
+            <td data-label="Estado"><span class="estado entregado">Entregado</span></td>
+            <td data-label="Monto">$599.99</td>
+          </tr>
+          <tr>
+            <td data-label="Pedido">
+              <strong>ORD-005</strong><br />12/1/2024
+            </td>
+            <td data-label="Cliente">
+              Laura Sánchez<br /><small>1 artículo</small>
+            </td>
+            <td data-label="Estado"><span class="estado entregado">Entregado</span></td>
+            <td data-label="Monto">$199.99</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="acciones-rapidas-contenedor">
+    <div class="acciones-rapidas-encabezado">
+      <p class="acciones-rapidas-titulo">Acciones Rápidas</p>
+      <p class="acciones-rapidas-subtitulo">Herramientas y funciones más utilizadas</p>
+    </div>
+
+    <div class="acciones-rapidas-botones">
+      <a href="../GESTION-PRODUCTOS/gestionProductos.html" class="accion-boton">
+        <span class="material-symbols-outlined">inventory_2</span>
+        <p>Gestionar Productos</p>
+      </a>
+      <a href="../GESTION-PEDIDOS/gestionPedidos.html" class="accion-boton">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <p>Gestionar Pedidos</p>
+      </a>
+    </div>
+  </div>
+</body>
+
+</html>
