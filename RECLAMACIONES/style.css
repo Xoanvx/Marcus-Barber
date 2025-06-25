@@ -89,7 +89,28 @@ input, textarea{
     border-radius: 15px;
 }
 
-/* Responsive: en pantallas pequeñas se vuelve 1 columna */
+.styled-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 17px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.styled-select:focus {
+    outline: none;
+    border-color: #888;
+    box-shadow: 0 0 0 2px rgba(100, 100, 255, 0.2);
+}
+
 @media (max-width: 800px) {
     .grid-container {
     grid-template-columns: 1fr;

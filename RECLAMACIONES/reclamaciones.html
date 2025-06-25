@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,85 +15,104 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="../imag/marcuss.png">
 </head>
+
 <body>
     <!-- Header - Reutilizo el mismo que estaba en el index.html -->
     <header class="header-container">
-        <a href="/"><div class="logo-container"></div>
-        <div class="logo-container">
-            <img src="../imag/marcuss.png" alt="Marcus Barber Shop Logo">
-            <div class="brand-name">
-                Marcus<br>
-                Barber Shop
+        <a href="/">
+            <div class="logo-container"></div>
+            <div class="logo-container">
+                <img src="../imag/marcuss.png" alt="Marcus Barber Shop Logo">
+                <div class="brand-name">
+                    Marcus<br>
+                    Barber Shop
+                </div>
             </div>
-        </div>
-        <ul class="menu">
-            <li><a href="/">INICIO</a></li>
-            <li><a href="../PRODUCTOS/productos.html">PRODUCTO</a></li>
-            <li><a href="../RESERVAS/reservas.html">RESERVAS</a></li>
-            <li><a href="../UBICACIONES/ubicaciones.html">UBICACIONES</a></li>
-            <li><a href="../NOSOTROS/NOSOTROS.HTML">NOSOTROS</a></li>
-            <li><a href="./SERVICIOS/servicios.html">SERVICIOS</a></li>
-            <li class="login-button"><a href="../LOGIN/login.html">LOGIN</a></li>
-        </ul>
+            <ul class="menu">
+                <li><a href="/">INICIO</a></li>
+                <li><a href="../PRODUCTOS/productos.html">PRODUCTO</a></li>
+                <li><a href="../RESERVAS/reservas.html">RESERVAS</a></li>
+                <li><a href="../UBICACIONES/ubicaciones.html">UBICACIONES</a></li>
+                <li><a href="../NOSOTROS/NOSOTROS.HTML">NOSOTROS</a></li>
+                <li><a href="./SERVICIOS/servicios.html">SERVICIOS</a></li>
+                <li class="login-button"><a href="../LOGIN/login.html">LOGIN</a></li>
+            </ul>
     </header>
 
     <div class="reclamaciones">
         <h1>LIBRO DE RECLAMACIONES</h1>
         <div class="container">
             <div class="mensaje">
-                <p>Conforme a lo establecido en el Código de Protección y Defensa del Consumidor (Ley N° 29571) y el Decreto Supremo N° 011-2011-PCM, Marcos Barber Shop pone a disposición de sus clientes el Libro de Reclamaciones.</p>
+                <p>Conforme a lo establecido en el Código de Protección y Defensa del Consumidor (Ley N° 29571) y el
+                    Decreto Supremo N° 011-2011-PCM, Marcos Barber Shop pone a disposición de sus clientes el Libro de
+                    Reclamaciones.</p>
             </div>
 
-            <p class="texto">Por favor complete el siguiente formulario con sus datos y la información sobre su reclamo o queja.
-            Nos  comunicaremos con usted para brindarle una solución en el plazo máximo de 30 días hábiles.
-            Recuerde que también puede presentar su reclamo de manera presencial en cualquiera de nuestras sedes.</p>
+            <p class="texto">Por favor complete el siguiente formulario con sus datos y la información sobre su reclamo
+                o queja.
+                Nos comunicaremos con usted para brindarle una solución en el plazo máximo de 30 días hábiles.
+                Recuerde que también puede presentar su reclamo de manera presencial en cualquiera de nuestras sedes.
+            </p>
 
-            <div class="grid-container">                
+            <div class="grid-container">
                 <div class="grid-item">
-                    <label for="nombre">Estilista:<label class="necesario"> *</label></label>
-                    <br><br>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-
-                
-                <div class="grid-item">
-                    <label for="nombre">Servicio:<label class="necesario"> *</label></label>
+                    <label for="nombre">Tipo:<label class="necesario"> *</label></label>
                     <br><br>
                     <input type="text" id="nombre" name="nombre" required>
                 </div>
 
 
                 <div class="grid-item">
-                    <label for="nombre">Sede:<label class="necesario"> *</label></label>
+                    <label for="categoria">Categoría del Servicio:<label class="necesario"> *</label></label>
                     <br><br>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <select id="categoria" name="categoria" class="styled-select" required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="barba">Barba</option>
+                        <option value="corte">Corte</option>
+                        <option value="barba_corte">Barba + Corte</option>
+                        <option value="otros">Otros</option>
+                    </select>
                 </div>
+
+                <div class="grid-item">
+                    <label for="canal">Canal de Atención:<label class="necesario"> *</label></label>
+                    <br><br>
+                    <select id="canal" name="canal" class="styled-select" required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="presencial">Presencial</option>
+                        <option value="tienda_online">Tienda Online</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
 
                 <div class="grid-item">
                     <label for="nombre">Fecha Servicio:<label class="necesario"> *</label></label>
                     <br><br>
                     <input type="date" id="nombre" name="nombre" required>
                 </div>
-                    
+
             </div>
-                <label for="descripcion">Descripción:<label class="necesario"> *</label></label>
-                <br>
-                <textarea class="area" id="descripcion" name="descripcion" required></textarea><br>
+            <label for="descripcion">Descripción:<label class="necesario"> *</label></label>
+            <br>
+            <textarea class="area" id="descripcion" name="descripcion" required></textarea><br>
 
-                <label for="solicitud">Solicitud:<label class="necesario"> *</label></label>
-                <br>
-                <textarea class="area" id="solicitud" name="solicitud" required></textarea>
+            <label for="solicitud">Solicitud:<label class="necesario"> *</label></label>
+            <br>
+            <textarea class="area" id="solicitud" name="solicitud" required></textarea>
 
 
-                <button type="submit" class="submit-button">ENVIAR RECLAMO</button>
+            <button type="submit" class="submit-button">ENVIAR RECLAMO</button>
 
             <div class="mensaje">
-                <p>Conforme a lo establecido en el Código de Protección y Defensa del Consumidor (Ley N° 29571) y el Decreto Supremo N° 011-2011-PCM, Marcos Barber Shop pone a disposición de sus clientes el Libro de Reclamaciones.</p>
+                <p>Conforme a lo establecido en el Código de Protección y Defensa del Consumidor (Ley N° 29571) y el
+                    Decreto Supremo N° 011-2011-PCM, Marcos Barber Shop pone a disposición de sus clientes el Libro de
+                    Reclamaciones.</p>
             </div>
         </div>
     </div>
 
-<!-- Footer inspirado -->
+    <!-- Footer inspirado -->
     <footer class="footer-container">
         <div class="footer-section">
             <h3>Te ayudamos</h3>
@@ -131,7 +151,8 @@
 
             <h3 class="siguenos">Síguenos</h3>
             <div class="social-icons">
-                <a href="https://www.instagram.com/marcu_sbarber/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/marcu_sbarber/" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             </div>
@@ -143,4 +164,5 @@
         <p>© 2025 Marcus Barber Shop — Estilo que transforma.</p>
     </div>
 </body>
+
 </html>
