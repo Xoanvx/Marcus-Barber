@@ -1,0 +1,19 @@
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    .sidebar {
+      background-color: #4e2e1d46;
+      border-right: 1px solid #443e2e;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .status-box {
+      border-radius: 10px;
+      padding: 15px;
+      background-color: white;
+      color: black;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
