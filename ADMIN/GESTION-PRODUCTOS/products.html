@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Marcus Barber</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Marcus Barber</h2>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Principal</div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-item">
+                            <a href="../DASHBOARD/dashboard.html">
+                                <span class="icon">📊</span>
+                                <span class="text">Dashboard</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Gestión</div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-item active">
+                            <a href="../GESTION-PRODUCTOS/products.html">
+                                <span class="icon">📦</span>
+                                <span class="text">Productos</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../GESTION-PEDIDOS/orders.html">
+                                <span class="icon">🛒</span>
+                                <span class="text">Pedidos</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../GESTION-RECLAMOS/claims.html">
+                                <span class="icon">⚠️</span>
+                                <span class="text">Reclamos</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-footer-content">
+                    <div class="user-avatar">A</div>
+                    <div class="user-info">
+                        <div class="name" id="sidebarUserName">Administrador</div>
+                        <div class="role">Admin</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                    <nav class="breadcrumb">
+                        <a href="dashboard.html">Dashboard</a>
+                        <span class="separator">/</span>
+                        <span>Productos</span>
+                    </nav>
+                </div>
+
+                <div class="header-right">
+                    <button class="refresh-btn" id="refreshBtn">🔄</button>
+                    <div class="user-menu">
+                        <span class="user-name" id="userName">Administrador</span>
+                        <button class="logout-btn" id="logoutBtn">Cerrar Sesión</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Products Content -->
+            <div class="page-content">
+                <div class="page-header">
+                    <h1>Productos</h1>
+                    <button class="btn btn-primary" id="addProductBtn">
+                        <span class="icon">➕</span>
+                        Nuevo Producto
+                    </button>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-section">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" placeholder="Buscar productos...">
+                    </div>
+
+                    <div class="filter-group">
+                        <select id="categoryFilter">
+                            <option value="">Todas las categorías</option>
+                            <option value="CORTES">Cortes</option>
+                            <option value="PRODUCTOS">Productos</option>
+                            <option value="SERVICIOS">Servicios</option>
+                        </select>
+
+                        <select id="stockFilter">
+                            <option value="">Todo el stock</option>
+                            <option value="low">Stock bajo</option>
+                            <option value="out">Sin stock</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Products Table -->
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Categoría</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                                <!-- En acciones debe haber eliminar y editar -->
+                                <!-- Al momento de crear un nuevo producto se debe subir 3 imagenes -->
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                            <!-- Products will be loaded here -->
+                        </tbody>
+                    </table>
+
+                    <!-- Empty State -->
+                    <div class="empty-state" id="emptyState" style="display: none;">
+                        <div class="empty-icon">📦</div>
+                        <h3>No hay productos</h3>
+                        <p>Comienza agregando tu primer producto</p>
+                        <button class="btn btn-primary" onclick="openProductModal()">
+                            Agregar Producto
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Nuevo Producto</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+
+            <form class="modal-form" id="productForm">
+                <div class="form-section">
+                    <h3>Información Básica</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productName">Nombre del Producto *</label>
+                            <input type="text" id="productName" name="nombre" required>
+                            <span class="error-message" id="nombreError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productCategory">Categoría *</label>
+                            <select id="productCategory" name="categoria" required>
+                                <option value="">Seleccionar categoría</option>
+                                <option value="CORTES">Cortes</option>
+                                <option value="PRODUCTOS">Productos</option>
+                                <option value="SERVICIOS">Servicios</option>
+                            </select>
+                            <span class="error-message" id="categoriaError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productPrice">Precio *</label>
+                            <input type="number" id="productPrice" name="precio" step="0.01" min="0" required>
+                            <span class="error-message" id="precioError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productStock">Stock</label>
+                            <input type="number" id="productStock" name="stock" min="0" value="0">
+                            <span class="error-message" id="stockError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productDescription">Descripción</label>
+                        <textarea id="productDescription" name="descripcion" rows="3"
+                            placeholder="Descripción del producto..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Imagen del Producto</h3>
+
+                    <div class="form-group">
+                        <label for="productImage">Imagen</label>
+                        <div class="image-upload">
+                            <div class="image-preview" id="imagePreview"
+                                onclick="document.getElementById('productImage').click()">
+                                <span class="upload-text">Seleccionar imagen</span>
+                            </div>
+                            <input type="file" id="productImage" name="imagen" accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="saveBtn">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+
+</html>

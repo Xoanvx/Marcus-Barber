@@ -2,239 +2,305 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <link rel="stylesheet" href="../../styleHeaderFooter.css">
-  <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Marcus Barber</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Marcus Barber</h2>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
 
-  <header class="header-container">
-    <a href="/">
-      <div class="logo-container"></div>
-      <div class="logo-container">
-        <img src="../../imag/marcuss.png" alt="Marcus Barber Shop Logo">
-        <div class="brand-name">
-          Marcus<br>
-          Barber Shop
-        </div>
-      </div>
-      <ul class="menu">
-        <li><a href="/">INICIO</a></li>
-        <li><a href="../PRODUCTOS/productos.html">PRODUCTO</a></li>
-        <li><a href="../RESERVAS/reservas.html">RESERVAS</a></li>
-        <li><a href="../UBICACIONES/ubicaciones.html">UBICACIONES</a></li>
-        <li><a href="../NOSOTROS/NOSOTROS.HTML">NOSOTROS</a></li>
-        <li><a href="./SERVICIOS/servicios.html">SERVICIOS</a></li>
-        <li class="login-button"><a href="../LOGIN/login.html">LOGIN</a></li>
-      </ul>
-  </header>
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Principal</div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-item active">
+                            <a href="../DASHBOARD/dashboard.html">
+                                <span class="icon">📊</span>
+                                <span class="text">Dashboard</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
-  <div class="titulo">
-    <h1>Dashboard Administrativo</h1>
-    <p>Resumen general de Marcus Barber</p>
-  </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Gestión</div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-item">
+                            <a href="../GESTION-PRODUCTOS/products.html">
+                                <span class="icon">📦</span>
+                                <span class="text">Productos</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../GESTION-PEDIDOS/orders.html">
+                                <span class="icon">🛒</span>
+                                <span class="text">Pedidos</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../GESTION-RECLAMOS/claims.html">
+                                <span class="icon">⚠️</span>
+                                <span class="text">Reclamos</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-  <div class="contenedor-resumen">
-    <div class="resumen-ventas">
-      <div class="cuadro">
-        <div class="contenido">
-          <div class="izquierda">
-            <p class="titulo">Ingresos Totales</p>
-            <p class="monto">S/ 4,230.70</p>
-          </div>
-          <div class="derecha">
-            <span class="material-symbols-outlined">attach_money</span>
-          </div>
-        </div>
-      </div>
+            <div class="sidebar-footer">
+                <div class="sidebar-footer-content">
+                    <div class="user-avatar">A</div>
+                    <div class="user-info">
+                        <div class="name" id="sidebarUserName">Administrador</div>
+                        <div class="role">Admin</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                    <nav class="breadcrumb">
+                        <span>Dashboard</span>
+                    </nav>
+                </div>
+
+                <div class="header-right">
+                    <button class="refresh-btn" id="refreshBtn">🔄</button>
+                    <div class="user-menu">
+                        <span class="user-name" id="userName">Administrador</span>
+                        <button class="logout-btn" id="logoutBtn">Cerrar Sesión</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="page-content">
+                <div class="page-header">
+                    <h1>Dashboard</h1>
+                </div>
+
+                <div class="dashboard-content">
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">📦</div>
+                            <div class="stat-info">
+                                <h3 id="totalProducts">0</h3>
+                                <p>Total Productos</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">🛒</div>
+                            <div class="stat-info">
+                                <h3 id="totalOrders">0</h3>
+                                <p>Pedidos Totales</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">⚠️</div>
+                            <div class="stat-info">
+                                <h3 id="totalClaims">0</h3>
+                                <p>Reclamos Activos</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">💰</div>
+                            <div class="stat-info">
+                                <h3 id="totalRevenue">$0</h3>
+                                <p>Ingresos del Mes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Section -->
+                    <div class="charts-section">
+                        <div class="chart-card">
+                            <h3>Ventas por Mes</h3>
+                            <div class="chart-container">
+                                <canvas id="salesChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-card">
+                            <h3>Productos por Categoría</h3>
+                            <div class="chart-container">
+                                <canvas id="categoryChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="activity-section">
+                        <div class="section-header">
+                            <h3>Actividad Reciente</h3>
+                            <button class="view-all-btn">Ver Todo</button>
+                        </div>
+
+                        <div class="activity-list" id="activityList">
+                            <!-- Activity items will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <h3>Acciones Rápidas</h3>
+                        <div class="actions-grid">
+                            <button class="action-btn" onclick="window.location.href='products.html'">
+                                <span class="icon">➕</span>
+                                <span>Nuevo Producto</span>
+                            </button>
+                            <button class="action-btn" onclick="window.location.href='orders.html'">
+                                <span class="icon">📋</span>
+                                <span>Ver Pedidos</span>
+                            </button>
+                            <button class="action-btn" onclick="window.location.href='claims.html'">
+                                <span class="icon">🔍</span>
+                                <span>Revisar Reclamos</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
 
-    <div class="resumen-ventas">
-      <div class="cuadro">
-        <div class="contenido">
-          <div class="izquierda">
-            <p class="titulo">Total de Ventas</p>
-            <p class="monto">1,205</p>
-          </div>
-          <div class="derecha">
-            <span class="material-symbols-outlined">shopping_cart</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <div class="toast" id="toast"></div>
 
-  <div class="estadisticas">
-    <div class="productos-vendidos">
-      <div class="titulo">
-        <span class="material-symbols-outlined">package_2</span>
-        <span>Top 5 Productos Más Vendidos</span>
-        <p>Productos ordenados por ingresos generados</p>
-      </div>
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Dashboard specific functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            loadDashboardData();
+            initializeCharts();
 
-      <div>
-        <ol>
-          <li>
-            <div class="product-info">
-              <img src="../../imag/producto_top1.jpeg" alt="Smartphone Pro Max">
-              <div>
-                <strong>Smartphone Pro Max</strong>
-                <p>245 unidades vendidas</p>
-              </div>
-            </div>
-            <div class="product-sales">
-              <p>$122,500</p>
-            </div>
-          </li>
+            // Set user name in sidebar
+            if (auth.isAuthenticated()) {
+                const user = auth.getUser();
+                const sidebarUserName = document.getElementById('sidebarUserName');
+                if (sidebarUserName) {
+                    sidebarUserName.textContent = user?.name || 'Administrador';
+                }
+            }
+        });
 
-          <li>
-            <div class="product-info">
-              <img src="../../imag/producto_top1.jpeg" alt="Smartphone Pro Max">
-              <div>
-                <strong>Laptop Gaming Elite</strong>
-                <p>89 unidades vendidas</p>
-              </div>
-            </div>
-            <div class="product-sales">
-              <p>$89,000</p>
-            </div>
-          </li>
+        async function loadDashboardData() {
+            try {
+                // Simulate API calls with mock data
+                const products = [
+                    { id: 1, nombre: 'Corte Clásico', categoria: 'CORTES', precio: 1500, stock: 0 },
+                    { id: 2, nombre: 'Shampoo Premium', categoria: 'PRODUCTOS', precio: 2500, stock: 15 }
+                ];
 
-          <li>
-            <div class="product-info">
-              <img src="../../imag/producto_top1.jpeg" alt="Smartphone Pro Max">
-              <div>
-                <strong>Auriculares Wireless</strong>
-                <p>456 unidades vendidas</p>
-              </div>
-            </div>
-            <div class="product-sales">
-              <p>$45,600</p>
-            </div>
-          </li>
+                const orders = [
+                    { id: 1, cliente: 'Juan Pérez', total: 3500, estado: 'PENDIENTE' },
+                    { id: 2, cliente: 'María García', total: 1500, estado: 'COMPLETADO' }
+                ];
 
-          <li>
-            <div class="product-info">
-              <img src="../../imag/producto_top1.jpeg" alt="Smartphone Pro Max">
-              <div>
-                <strong>Tablet Ultra</strong>
-                <p>123 unidades vendidas</p>
-              </div>
-            </div>
-            <div class="product-sales">
-              <p>$36,900</p>
-            </div>
-          </li>
+                const claims = [
+                    { id: 1, cliente: 'Ana López', estado: 'PENDIENTE' },
+                    { id: 2, cliente: 'Carlos Ruiz', estado: 'EN_PROCESO' }
+                ];
 
-          <li>
-            <div class="product-info">
-              <img src="../../imag/producto_top1.jpeg" alt="Smartphone Pro Max">
-              <div>
-                <strong>Smartwatch Series X</strong>
-                <p>178 unidades vendidas</p>
-              </div>
-            </div>
-            <div class="product-sales">
-              <p>$35,600</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </div>
+                document.getElementById('totalProducts').textContent = products.length;
+                document.getElementById('totalOrders').textContent = orders.length;
+                document.getElementById('totalClaims').textContent = claims.filter(c => c.estado !== 'RESUELTO').length;
 
-    <div class="ultimos-pedidos">
-      <div class="titulo">
-        <span class="material-symbols-outlined">group</span>
-        <span> Últimos Pedidos</span>
-        <p>Pedidos más recientes realizados en tu tienda</p>
-      </div>
+                // Calculate revenue
+                const revenue = orders.reduce((sum, order) => sum + (order.total || 0), 0);
+                document.getElementById('totalRevenue').textContent = formatCurrency(revenue);
 
-      <table>
-        <thead>
-          <tr>
-            <th>Pedido</th>
-            <th>Cliente</th>
-            <th>Estado</th>
-            <th>Monto</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="Pedido">
-              <strong>ORD-001</strong><br />14/1/2024
-            </td>
-            <td data-label="Cliente">
-              Ana García<br /><small>3 artículos</small>
-            </td>
-            <td data-label="Estado"><span class="estado pendiente">Pendiente</span></td>
-            <td data-label="Monto">$299.99</td>
-          </tr>
-          <tr>
-            <td data-label="Pedido">
-              <strong>ORD-002</strong><br />14/1/2024
-            </td>
-            <td data-label="Cliente">
-              Carlos López<br /><small>1 artículo</small>
-            </td>
-            <td data-label="Estado"><span class="estado pendiente">Pendiente</span></td>
-            <td data-label="Monto">$1299.99</td>
-          </tr>
-          <tr>
-            <td data-label="Pedido">
-              <strong>ORD-003</strong><br />13/1/2024
-            </td>
-            <td data-label="Cliente">
-              María Rodríguez<br /><small>2 artículos</small>
-            </td>
-            <td data-label="Estado"><span class="estado proceso">En Proceso</span></td>
-            <td data-label="Monto">$89.99</td>
-          </tr>
-          <tr>
-            <td data-label="Pedido">
-              <strong>ORD-004</strong><br />13/1/2024
-            </td>
-            <td data-label="Cliente">
-              Juan Martínez<br /><small>4 artículos</small>
-            </td>
-            <td data-label="Estado"><span class="estado entregado">Entregado</span></td>
-            <td data-label="Monto">$599.99</td>
-          </tr>
-          <tr>
-            <td data-label="Pedido">
-              <strong>ORD-005</strong><br />12/1/2024
-            </td>
-            <td data-label="Cliente">
-              Laura Sánchez<br /><small>1 artículo</small>
-            </td>
-            <td data-label="Estado"><span class="estado entregado">Entregado</span></td>
-            <td data-label="Monto">$199.99</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+                // Load recent activity
+                loadRecentActivity();
 
-  <div class="acciones-rapidas-contenedor">
-    <div class="acciones-rapidas-encabezado">
-      <p class="acciones-rapidas-titulo">Acciones Rápidas</p>
-      <p class="acciones-rapidas-subtitulo">Herramientas y funciones más utilizadas</p>
-    </div>
+            } catch (error) {
+                console.error('Error loading dashboard data:', error);
+                showToast('Error al cargar datos del dashboard', 'error');
+            }
+        }
 
-    <div class="acciones-rapidas-botones">
-      <a href="../GESTION-PRODUCTOS/gestionProductos.html" class="accion-boton">
-        <span class="material-symbols-outlined">inventory_2</span>
-        <p>Gestionar Productos</p>
-      </a>
-      <a href="../GESTION-PEDIDOS/gestionPedidos.html" class="accion-boton">
-        <span class="material-symbols-outlined">shopping_cart</span>
-        <p>Gestionar Pedidos</p>
-      </a>
-    </div>
-  </div>
+        function loadRecentActivity() {
+            const activityList = document.getElementById('activityList');
+            const activities = [
+                { type: 'order', message: 'Nuevo pedido recibido de Juan Pérez', time: '5 min' },
+                { type: 'product', message: 'Producto "Shampoo Premium" actualizado', time: '15 min' },
+                { type: 'claim', message: 'Reclamo de Ana López resuelto', time: '1 hora' }
+            ];
+
+            activityList.innerHTML = activities.map(activity => `
+                <div class="activity-item">
+                    <div class="activity-icon ${activity.type}"></div>
+                    <div class="activity-content">
+                        <p>${activity.message}</p>
+                        <span class="activity-time">hace ${activity.time}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function initializeCharts() {
+            // Simple chart implementation
+            const salesChart = document.getElementById('salesChart');
+            const categoryChart = document.getElementById('categoryChart');
+
+            // For demo purposes, we'll create simple visual charts
+            // In a real implementation, you'd use Chart.js or similar
+            salesChart.innerHTML = '<div class="simple-chart">📈 Gráfico de Ventas por Mes</div>';
+            categoryChart.innerHTML = '<div class="simple-chart">🥧 Distribución por Categorías</div>';
+        }
+
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('es-ES', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2
+            }).format(amount);
+        }
+
+        function showToast(message, type) {
+            const existingToasts = document.querySelectorAll('.toast');
+            existingToasts.forEach(toast => toast.remove());
+
+            const toast = document.createElement('div');
+            toast.className = `toast ${type} show`;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
 </body>
 
 </html>
