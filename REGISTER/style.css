@@ -5,7 +5,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-html, body {
+
+html,
+body {
     height: 100%;
     margin: 0;
     background-image: url("../imag/register.png");
@@ -25,11 +27,11 @@ main {
 .register {
     display: flex;
     width: 100vw;
-    justify-content: center; 
+    justify-content: center;
     flex-direction: row-reverse;
 }
 
-.input{
+.input {
     width: 50vw;
     height: 100%;
     display: flex;
@@ -38,7 +40,7 @@ main {
     align-items: center;
 }
 
-.box{
+.box {
     width: 50%;
     height: 85vh;
     /* background-color: red; */
@@ -59,27 +61,27 @@ main {
     padding: 3vh 2vw;
 }
 
-.primera-parte #bienvenida{
+.primera-parte #bienvenida {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 900;
     font-size: 30px;
     color: #B8977E;
 }
 
-.primera-parte .titulo{
+.primera-parte .titulo {
     margin-bottom: 20px;
     color: white;
 }
 
 
-.primera-parte .titulo p{
+.primera-parte .titulo p {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
     font-size: 18px;
     color: #ffffffb0;
 }
 
-.primera-parte .descripcion{
+.primera-parte .descripcion {
     margin-bottom: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
@@ -87,12 +89,12 @@ main {
     color: #ababab;
 }
 
-.primera-parte img{
+.primera-parte img {
     height: 25%;
     margin-bottom: 10px;
 }
 
-.cont input{
+.cont input {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,7 +137,8 @@ main {
 
 .segunda-parte input:focus {
     outline: none;
-    border: 2px solid  #875E4B;;
+    border: 2px solid #875E4B;
+    ;
     background-color: #fff;
 }
 
@@ -154,7 +157,7 @@ main {
     transition: background-color 0.3s ease;
 }
 
-img{
+img {
     height: 10vh;
 }
 
@@ -176,7 +179,7 @@ img{
     text-decoration: underline;
 }
 
-.segunda-parte a:hover{
+.segunda-parte a:hover {
     color: #4c3019;
 }
 
@@ -188,34 +191,34 @@ img{
     justify-content: center;
     align-items: center;
     border: none;
-    background-color: rgba(0,0,0,0.527);
+    background-color: rgba(0, 0, 0, 0.527);
     color: white;
     font-size: 2.5rem;
     color: #B8977E;
     font-weight: bold;
 }
 
-.texto:hover{
+.texto:hover {
     background-color: rgba(0, 0, 0, 0.629);
     font-size: 2.8rem;
     transition: all 0.3s ease;
 }
 
-.texto:hover #cuenta{
+.texto:hover #cuenta {
     /* background-color: rgba(0,0,0,0.7); */
     font-size: 4rem;
     transition: all 0.3s ease;
 }
 
-#crear{
+#crear {
     color: #846752;
 }
 
-#cuenta{
+#cuenta {
     font-size: 3.5rem;
 }
 
-@media(max-width: 1400px){
+@media(max-width: 1400px) {
     .register {
         flex-direction: column;
         align-items: center;
@@ -232,7 +235,8 @@ img{
         align-items: center;
     }
 
-    .primera-parte, .segunda-parte {
+    .primera-parte,
+    .segunda-parte {
         width: 100%;
     }
 
@@ -244,14 +248,25 @@ img{
         font-size: 6vw;
     }
 
-    html, body {
+    html,
+    body {
         height: 120%;
     }
 
-    .segunda-parte p{
+    .segunda-parte p {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
     }
+}
+
+p[class^="error-"] {
+    color: #d93025;
+    font-size: 0.8rem;
+    margin: 4px 0 10px;
+}
+
+input.error {
+    border-color: #d93025;
 }
