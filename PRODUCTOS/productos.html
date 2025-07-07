@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,181 +14,193 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Iconos para la sección de redes sociales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
     <link rel="icon" type="image/x-icon" href="../imag/marcuss.png">
 </head>
+
 <body>
     <!-- Header - Reutilizo el mismo que estaba en el index.html -->
     <header class="header-container">
-        <a href="/"><div class="logo-container"></div>
-        <div class="logo-container">
-            <img src="../imag/marcuss.png" alt="Marcus Barber Shop Logo">
-            <div class="brand-name">
-                Marcus<br>
-                Barber Shop
+        <a href="/">
+            <div class="logo-container"></div>
+            <div class="logo-container">
+                <img src="../imag/marcuss.png" alt="Marcus Barber Shop Logo">
+                <div class="brand-name">
+                    Marcus<br>
+                    Barber Shop
+                </div>
             </div>
-        </div>
-        <ul class="menu">
-            <li><a href="/">INICIO</a></li>
-            <li><a href="../PRODUCTOS/productos.html">PRODUCTO</a></li>
-            <li><a href="../RESERVAS/reservas.html">RESERVAS</a></li>
-            <li><a href="../UBICACIONES/ubicaciones.html">UBICACIONES</a></li>
-            <li><a href="../NOSOTROS/NOSOTROS.HTML">NOSOTROS</a></li>
-            <li><a href="./SERVICIOS/servicios.html">SERVICIOS</a></li>
-            <li class="login-button"><a href="../LOGIN/login.html">LOGIN</a></li>
-        </ul>
+            <ul class="menu">
+                <li><a href="/">INICIO</a></li>
+                <li><a href="../PRODUCTOS/productos.html">PRODUCTO</a></li>
+                <li><a href="../RESERVAS/reservas.html">RESERVAS</a></li>
+                <li><a href="../UBICACIONES/ubicaciones.html">UBICACIONES</a></li>
+                <li><a href="../NOSOTROS/NOSOTROS.HTML">NOSOTROS</a></li>
+                <li><a href="./SERVICIOS/servicios.html">SERVICIOS</a></li>
+                <li class="login-button"><a href="../LOGIN/login.html">LOGIN</a></li>
+            </ul>
     </header>
 
     <!-- BODY REAL-->
     <div class="container">
-        
-    <div class="subcontainer2">
-        <div class="subcontainer1">
-            <div class="ops">
-                <label for="marcas">Marcas</label><br>
-                <label><input type="checkbox" class="marca-filter" value="dorsh"> Dorsh</label><br>
-                <label><input type="checkbox" class="marca-filter" value="gucci"> Gucci</label><br>
-                <label><input type="checkbox" class="marca-filter" value="elegance"> Elegance</label><br>
-                <label><input type="checkbox" class="marca-filter" value="levelB"> ElevelB</label>
+
+        <div class="subcontainer2">
+            <div class="subcontainer1">
+                <div class="ops">
+                    <label for="marcas">Marcas</label><br>
+                    <label><input type="checkbox" class="marca-filter" value="dorsh"> Dorsh</label><br>
+                    <label><input type="checkbox" class="marca-filter" value="gucci"> Gucci</label><br>
+                    <label><input type="checkbox" class="marca-filter" value="elegance"> Elegance</label><br>
+                    <label><input type="checkbox" class="marca-filter" value="levelB"> ElevelB</label>
+                </div>
+                <div class="ops">
+                    <label for="frutas">Categorias</label><br>
+                    <label><input type="checkbox" class="categoria-filter" value="afeitadora"> Afeitadora</label><br>
+                    <label><input type="checkbox" class="categoria-filter" value="afterShave"> After Shave</label><br>
+                    <label><input type="checkbox" class="categoria-filter" value="talco"> Talco</label><br>
+                    <label><input type="checkbox" class="categoria-filter" value="peine"> Peine</label>
+                </div>
             </div>
-            <div class="ops">
-                <label for="frutas">Categorias</label><br>
-                <label><input type="checkbox" class="categoria-filter" value="afeitadora"> Afeitadora</label><br>
-                <label><input type="checkbox" class="categoria-filter" value="afterShave"> After Shave</label><br>
-                <label><input type="checkbox" class="categoria-filter" value="talco">  Talco</label><br>
-                <label><input type="checkbox" class="categoria-filter" value="peine"> Peine</label>
+            <div class="metro">
+                <div class="search">
+                    <p>Nuestros productos:</p>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar productos...">
+                        <button type="submit">
+                            <span class="material-symbols-outlined">
+                                search
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- Grid de productos -->
+                <main class="products-grid">
+
+                    <div class="product" data-marca="dorsh" data-category="afterShave">
+                        <a href="../DETALLESPRODUCTO/producto01.html" class="product-link">
+                            <div class="bordeado">
+                                <img src="https://sanbarberperu.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-01-29-at-5.13.09-PM-1.jpeg"
+                                    alt="Producto 1">
+                            </div>
+                            <h3>GEL DE AFEITAR 1000ml S12 VERDANT SHIELD DORSH</h3>
+                            <h4>S/ 23.00</h4>
+                        </a>
+                    </div>
+
+                    <div class="product" data-marca="gucci" data-category="peine">
+                        <a href="../DETALLESPRODUCTO/producto02.html" class="product-link">
+                            <div class="bordeado">
+                                <img src="../DETALLESPRODUCTO/imgprueba/Mpeine01.png" alt="Producto 2">
+                            </div>
+                            <h3>Set de peines usados por Marco</h3>
+                            <h4>S/. 1520.00</h4>
+                        </a>
+                    </div>
+
+                    <div class="product" data-marca="elegance" data-category="afeitadora">
+                        <a href="../DETALLESPRODUCTO/producto03.html" class="product-link">
+                            <div class="bordeado">
+                                <img src="https://www.ibsimportadora.pe/cdn/shop/files/Andis-Slimline-Pro-GTX.webp?v=1742572582&width=700"
+                                    alt="Producto 3">
+                            </div>
+                            <h3>Andis Slimline Pro GTX</h3>
+                            <h4>S/. 350.00</h4>
+                        </a>
+                    </div>
+
+                    <div class="product" data-marca="dorsh" data-category="afterShave">
+                        <a href="../DETALLESPRODUCTO/producto04.html" class="product-link">
+                            <div class="bordeado">
+                                <img src="https://www.ibsimportadora.pe/cdn/shop/files/barber-by-marmara-N22-400ml.webp?v=1742523628&width=800"
+                                    alt="Producto 4">
+                            </div>
+                            <h3>Aftershave Marmara N°22 400ml</h3>
+                            <h4>S/. 25.00</h4>
+                        </a>
+                    </div>
+
+                    <div class="product" data-marca="dorsh" data-category="afterShave">
+                        <a href="../DETALLESPRODUCTO/producto05.html" class="product-link">
+                            <div class="bordeado">
+                                <img src="https://www.ibsimportadora.pe/cdn/shop/files/barber-by-marmara-N23-400ml.webp?v=1742524025&width=800"
+                                    alt="Producto 5">
+                            </div>
+                            <h3>AfterShave Marmara N° 23 400ml</h3>
+                            <h4>S/. 25.00</h4>
+                        </a>
+                    </div>
+
+                    <div class="product" data-marca="dorsh" data-category="talco">
+                        <a href="../DETALLESPRODUCTO/producto06.html" class="product-link">
+                            <div class="bordeado">
+                                <img src="https://sanbarberperu.com/wp-content/uploads/2025/02/TALCO.jpeg"
+                                    alt="Producto 6">
+                            </div>
+                            <h3>TALCO 300G DORSH</h3>
+                            <h4>S/. 20.00</h4>
+                        </a>
+                    </div>
+
+                    <div class="product" data-marca="elegance" data-category="afeitadora">
+                        <a href="../DETALLESPRODUCTO/producto07.html" class="product-link">
+                            <div class="bordeado">
+                                <img src="https://sanbarberperu.com/wp-content/uploads/2024/10/Mesa-de-trabajo-1-4.jpg"
+                                    alt="Producto 7">
+                            </div>
+                            <h3>Trimmer Boost Black</h3>
+                            <h4>S/. 589.00</h4>
+                        </a>
+                    </div>
+
+                    <div class="product" data-marca="dorsh" data-category="afterShave">
+                        <a href="../DETALLESPRODUCTO/producto08.html" class="product-link">
+                            <div class="bordeado">
+                                <img src="https://sanbarberperu.com/wp-content/uploads/2024/07/AFTER-SHAVE-NISHMAN-N%C2%B05-400ML.jpg"
+                                    alt="Producto 8">
+                            </div>
+                            <h3>AFTER SHAVE NISH MAN N°5</h3>
+                            <h4>S/. 40.00</h4>
+                        </a>
+                    </div>
+
+                    <div class="product" data-marca="levelB" data-category="peine">
+                        <a href="../DETALLESPRODUCTO/producto09.html" class="product-link">
+                            <div class="bordeado">
+                                <img src="https://sanbarberperu.com/wp-content/uploads/2023/10/PEINE-SECCION-MIXTO-FUCSIA.jpg"
+                                    alt="Producto 9">
+                            </div>
+                            <h3>Peine Sección Mixto (Fucsia)</h3>
+                            <h4>S/. 6.00</h4>
+                        </a>
+                    </div>
+
+                    <div class="product" data-marca="levelB" data-category="peine">
+                        <a href="../DETALLESPRODUCTO/producto10.html" class="product-link">
+                            <div class="bordeado">
+                                <img src="https://sanbarberperu.com/wp-content/uploads/2024/08/PEINE-TEXTURIZADOR-DOBLE-GRANDE-NEGRO.jpg"
+                                    alt="Producto 10">
+                            </div>
+                            <h3>Peine Texturizador Doble Grande</h3>
+                            <h4>S/. 7.00</h4>
+                        </a>
+                    </div>
+
+                </main>
+
+                <div class="botones">
+                    <div class="btn">
+                        Anterior
+                    </div>
+                    <div class="btn">
+                        Siguiente
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="metro">
-            <div class="search">
-                <p>Nuestros productos:</p>
-                <div class="search-bar">
-                    <input type="text" placeholder="Buscar productos...">
-                    <button type="submit">
-                        <span class="material-symbols-outlined">
-                            search
-                        </span>
-                    </button>
-                </div>
-            </div>
 
-            
-            <!-- Grid de productos -->
-            <main class="products-grid">
-                
-                <div class="product" data-marca="dorsh" data-category="afterShave">
-                    <a href="../DETALLESPRODUCTO/producto01.html" class="product-link">
-                        <div class="bordeado">
-                            <img src="https://sanbarberperu.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-01-29-at-5.13.09-PM-1.jpeg" alt="Producto 1">
-                        </div>
-                        <h3>GEL DE AFEITAR 1000ml S12 VERDANT SHIELD DORSH</h3>
-                        <h4>S/ 23.00</h4>
-                    </a>
-                </div>
-
-                <div class="product" data-marca="gucci" data-category="peine">
-                    <a href="../DETALLESPRODUCTO/producto02.html" class="product-link">
-                        <div class="bordeado">
-                            <img src="../DETALLESPRODUCTO/imgprueba/Mpeine01.png" alt="Producto 2">
-                        </div>
-                        <h3>Set de peines usados por Marco</h3>
-                        <h4>S/. 1520.00</h4>
-                    </a>
-                </div>
-
-                <div class="product" data-marca="elegance" data-category="afeitadora">
-                    <a href="../DETALLESPRODUCTO/producto03.html" class="product-link">
-                        <div class="bordeado">
-                            <img src="https://www.ibsimportadora.pe/cdn/shop/files/Andis-Slimline-Pro-GTX.webp?v=1742572582&width=700" alt="Producto 3">
-                        </div>
-                        <h3>Andis Slimline Pro GTX</h3>
-                        <h4>S/. 350.00</h4>
-                    </a>
-                </div>
-
-                <div class="product" data-marca="dorsh" data-category="afterShave">
-                    <a href="../DETALLESPRODUCTO/producto04.html" class="product-link">
-                        <div class="bordeado">
-                            <img src="https://www.ibsimportadora.pe/cdn/shop/files/barber-by-marmara-N22-400ml.webp?v=1742523628&width=800" alt="Producto 4">
-                        </div>
-                        <h3>Aftershave Marmara N°22 400ml</h3>
-                        <h4>S/. 25.00</h4>
-                    </a>
-                </div>
-
-                <div class="product" data-marca="dorsh" data-category="afterShave">
-                    <a href="../DETALLESPRODUCTO/producto05.html" class="product-link">
-                        <div class="bordeado">
-                            <img src="https://www.ibsimportadora.pe/cdn/shop/files/barber-by-marmara-N23-400ml.webp?v=1742524025&width=800" alt="Producto 5">
-                        </div>
-                        <h3>AfterShave Marmara N° 23 400ml</h3>
-                        <h4>S/. 25.00</h4>
-                    </a>
-                </div>
-
-                <div class="product" data-marca="dorsh" data-category="talco">
-                    <a href="../DETALLESPRODUCTO/producto06.html" class="product-link">
-                        <div class="bordeado">
-                            <img src="https://sanbarberperu.com/wp-content/uploads/2025/02/TALCO.jpeg" alt="Producto 6">
-                        </div>
-                        <h3>TALCO 300G DORSH</h3>
-                        <h4>S/. 20.00</h4>
-                    </a>
-                </div>
-
-                <div class="product" data-marca="elegance" data-category="afeitadora">
-                    <a href="../DETALLESPRODUCTO/producto07.html" class="product-link">
-                        <div class="bordeado">
-                            <img src="https://sanbarberperu.com/wp-content/uploads/2024/10/Mesa-de-trabajo-1-4.jpg" alt="Producto 7">
-                        </div>
-                        <h3>Trimmer Boost Black</h3>
-                        <h4>S/. 589.00</h4>
-                    </a>
-                </div>
-
-                <div class="product" data-marca="dorsh" data-category="afterShave">
-                    <a href="../DETALLESPRODUCTO/producto08.html" class="product-link">
-                        <div class="bordeado">
-                            <img src="https://sanbarberperu.com/wp-content/uploads/2024/07/AFTER-SHAVE-NISHMAN-N%C2%B05-400ML.jpg" alt="Producto 8">
-                        </div>
-                        <h3>AFTER SHAVE NISH MAN N°5</h3>
-                        <h4>S/. 40.00</h4>
-                    </a>
-                </div>
-
-                <div class="product" data-marca="levelB" data-category="peine">
-                    <a href="../DETALLESPRODUCTO/producto09.html" class="product-link">
-                        <div class="bordeado">
-                            <img src="https://sanbarberperu.com/wp-content/uploads/2023/10/PEINE-SECCION-MIXTO-FUCSIA.jpg" alt="Producto 9">
-                        </div>
-                        <h3>Peine Sección Mixto (Fucsia)</h3>
-                        <h4>S/. 6.00</h4>
-                    </a>
-                </div>
-
-                <div class="product" data-marca="levelB" data-category="peine">
-                    <a href="../DETALLESPRODUCTO/producto10.html" class="product-link">
-                        <div class="bordeado">
-                            <img src="https://sanbarberperu.com/wp-content/uploads/2024/08/PEINE-TEXTURIZADOR-DOBLE-GRANDE-NEGRO.jpg" alt="Producto 10">
-                        </div>
-                        <h3>Peine Texturizador Doble Grande</h3>
-                        <h4>S/. 7.00</h4>
-                    </a>
-                </div>
-
-            </main>
-
-            <div class="botones">
-            <div class="btn">
-                Anterior
-            </div>
-            <div class="btn">
-                Siguiente
-            </div>
-        </div>
-        </div>
-        </div>
-        
     </div>
 
     <!-- Footer inspirado -->
@@ -229,7 +242,8 @@
 
             <h3 class="siguenos">Síguenos</h3>
             <div class="social-icons">
-                <a href="https://www.instagram.com/marcu_sbarber/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/marcu_sbarber/" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             </div>
@@ -242,38 +256,40 @@
     </div>
 
     <script>
-  const marcaCheckboxes = document.querySelectorAll('.marca-filter');
-  const categoriaCheckboxes = document.querySelectorAll('.categoria-filter');
-  const productos = document.querySelectorAll('.product');
+        const marcaCheckboxes = document.querySelectorAll('.marca-filter');
+        const categoriaCheckboxes = document.querySelectorAll('.categoria-filter');
+        const productos = document.querySelectorAll('.product');
 
-  function filtrarProductos() {
-    const marcasSeleccionadas = Array.from(marcaCheckboxes)
-      .filter(cb => cb.checked)
-      .map(cb => cb.value);
+        function filtrarProductos() {
+            const marcasSeleccionadas = Array.from(marcaCheckboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
 
-    const categoriasSeleccionadas = Array.from(categoriaCheckboxes)
-      .filter(cb => cb.checked)
-      .map(cb => cb.value);
+            const categoriasSeleccionadas = Array.from(categoriaCheckboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
 
-    productos.forEach(producto => {
-      const marca = producto.getAttribute('data-marca');
-      const categoria = producto.getAttribute('data-category');
+            productos.forEach(producto => {
+                const marca = producto.getAttribute('data-marca');
+                const categoria = producto.getAttribute('data-category');
 
-      const coincideMarca = marcasSeleccionadas.length === 0 || marcasSeleccionadas.includes(marca);
-      const coincideCategoria = categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(categoria);
+                const coincideMarca = marcasSeleccionadas.length === 0 || marcasSeleccionadas.includes(marca);
+                const coincideCategoria = categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(categoria);
 
-      if (coincideMarca && coincideCategoria) {
-        producto.style.display = 'block';
-      } else {
-        producto.style.display = 'none';
-      }
-    });
-  }
+                if (coincideMarca && coincideCategoria) {
+                    producto.style.display = 'block';
+                } else {
+                    producto.style.display = 'none';
+                }
+            });
+        }
 
-  marcaCheckboxes.forEach(cb => cb.addEventListener('change', filtrarProductos));
-  categoriaCheckboxes.forEach(cb => cb.addEventListener('change', filtrarProductos));
-</script>
+        marcaCheckboxes.forEach(cb => cb.addEventListener('change', filtrarProductos));
+        categoriaCheckboxes.forEach(cb => cb.addEventListener('change', filtrarProductos));
+    </script>
 
 
 </body>
+<script src="../header.js"></script>
+
 </html>

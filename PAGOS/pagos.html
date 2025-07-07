@@ -1,279 +1,236 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrito de Compras - Marcus Barber Shop</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../styleHeaderFooter.css" />
-    <link rel="stylesheet" href="../PAGOS/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-    <link rel="icon" type="image/x-icon" href="../imag/marcuss.png">
 
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito de Compras - Marcus Barber Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styleHeaderFooter.css" />
+  <link rel="stylesheet" href="../PAGOS/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="icon" type="image/x-icon" href="../imag/marcuss.png">
 
-  <body>
-    <header class="header-container">
-        <a href="/"><div class="logo-container"></div>
-        <div class="logo-container">
-            <img src="../imag/marcuss.png" alt="Marcus Barber Shop Logo">
-            <div class="brand-name">
-                Marcus<br>
-                Barber Shop
-            </div>
-        </div>
-        <ul class="menu">
-            <li><a href="/">INICIO</a></li>
-            <li><a href="../PRODUCTOS/productos.html">PRODUCTO</a></li>
-            <li><a href="../RESERVAS/reservas.html">RESERVAS</a></li>
-            <li><a href="../UBICACIONES/ubicaciones.html">UBICACIONES</a></li>
-            <li><a href="../NOSOTROS/NOSOTROS.HTML">NOSOTROS</a></li>
-            <li><a href="./SERVICIOS/servicios.html">SERVICIOS</a></li>
-            <li class="login-button"><a href="../LOGIN/login.html">LOGIN</a></li>
-        </ul>
-    </header>
+</head>
 
-    <!-- Carrito flotante -->
-    <div id="floating-cart" class="floating-cart hidden">
-      <i class="fas fa-shopping-cart"></i>
-      <span id="cart-count" class="cart-count">0</span>
-    </div>
-
-    <div class="main-container">
-      <h1 class="page-title">Tu Carrito de Compras</h1>
-      <p class="page-subtitle">
-        Revisa tus productos antes de finalizar la compra
-      </p>
-
-      <div class="cart-container">
-        <div class="cart-items-section">
-          <h2 class="section-title">
-            <i class="fas fa-shopping-bag"></i>
-            Productos en tu carrito
-          </h2>
-          <div id="cart-items-container">
-            <div class="empty-cart">
-              <i class="fas fa-shopping-cart"></i>
-              <h3>Tu carrito está vacío</h3>
-              <p>Agrega algunos productos increíbles para comenzar</p>
-              <a
-                href="../PRODUCTOS/productos.html"
-                class="continue-shopping-btn"
-              >
-                Continuar Comprando
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="cart-summary">
-          <h2 class="section-title">
-            <i class="fas fa-receipt"></i>
-            Resumen del pedido
-          </h2>
-
-          <div class="summary-row">
-            <span>Subtotal:</span>
-            <span id="subtotal">S/ 0.00</span>
-          </div>
-          <div class="summary-row">
-            <span>Envío:</span>
-            <span id="shipping">Gratis</span>
-          </div>
-          <div class="summary-row">
-            <span>Total:</span>
-            <span id="total">S/ 0.00</span>
-          </div>
-
-          <div class="payment-methods">
-            <h3 style="color: #c7a17a; margin-bottom: 20px; font-size: 1.1rem">
-              Métodos de Pago
-            </h3>
-
-            <div
-              class="payment-method selected"
-              onclick="selectPaymentMethod(this, 'card')"
-            >
-              <input type="radio" name="payment" value="card" checked />
-              <div class="payment-info">
-                <div class="payment-brand">Tarjeta de Crédito/Débito</div>
-                <div class="payment-desc">
-                  Visa, MasterCard, American Express
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="payment-method"
-              onclick="selectPaymentMethod(this, 'digital')"
-            >
-              <input type="radio" name="payment" value="yape" />
-              <div class="payment-info">
-                <div class="payment-brand">Yape</div>
-                <div class="payment-desc">Billetera Digital</div>
-              </div>
-            </div>
-
-            <div
-              class="payment-method"
-              onclick="selectPaymentMethod(this, 'digital')"
-            >
-              <input type="radio" name="payment" value="plin" />
-              <div class="payment-info">
-                <div class="payment-brand">Plin</div>
-                <div class="payment-desc">Billetera Digital</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Formulario de Tarjeta -->
-          <div id="card-form" class="card-form">
-            <h4 class="form-title">
-              <i class="fas fa-credit-card"></i> Información de la Tarjeta
-            </h4>
-
-            <div class="form-group">
-              <label for="card-number">Número de Tarjeta</label>
-              <input
-                type="text"
-                id="card-number"
-                placeholder="1234 5678 9012 3456"
-                maxlength="19"
-              />
-              <div class="card-icons">
-                <i class="fab fa-cc-visa"></i>
-                <i class="fab fa-cc-mastercard"></i>
-                <i class="fab fa-cc-amex"></i>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="card-expiry">Fecha de Vencimiento</label>
-                <input
-                  type="text"
-                  id="card-expiry"
-                  placeholder="MM/AA"
-                  maxlength="5"
-                />
-              </div>
-              <div class="form-group">
-                <label for="card-cvv">CVV</label>
-                <input
-                  type="text"
-                  id="card-cvv"
-                  placeholder="123"
-                  maxlength="4"
-                />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="card-name">Nombre del Titular</label>
-              <input
-                type="text"
-                id="card-name"
-                placeholder="Nombre como aparece en la tarjeta"
-                maxlength="50"
-              />
-            </div>
-          </div>
-
-          <!-- QR Codes para Billeteras Digitales -->
-          <div id="qr-section" class="qr-section hidden">
-            <h4 class="form-title">
-              <i class="fas fa-qrcode"></i> Escanea el código QR
-            </h4>
-
-            <div class="qr-container">
-              <div id="yape-qr" class="qr-code hidden">
-                <img
-                  src="../PAGOS/QR/yape.jfif"
-                  alt="Código QR Yape"
-                />
-                <p>Escanea con tu app Yape</p>
-              </div>
-
-              <div id="plin-qr" class="qr-code hidden">
-                <img
-                  src="../PAGOS/QR/plin.jfif"
-                  alt="Código QR Plin"
-                />
-                <p>Escanea con tu app Plin</p>
-              </div>
-            </div>
-          </div>
-
-          <button
-            class="checkout-btn"
-            id="checkout-btn"
-            onclick="processPayment()"
-          >
-            <i class="fas fa-lock"></i> Proceder al Pago
-          </button>
+<body>
+  <header class="header-container">
+    <a href="/">
+      <div class="logo-container"></div>
+      <div class="logo-container">
+        <img src="../imag/marcuss.png" alt="Marcus Barber Shop Logo">
+        <div class="brand-name">
+          Marcus<br>
+          Barber Shop
         </div>
       </div>
-    </div>
+      <ul class="menu">
+        <li><a href="/">INICIO</a></li>
+        <li><a href="../PRODUCTOS/productos.html">PRODUCTO</a></li>
+        <li><a href="../RESERVAS/reservas.html">RESERVAS</a></li>
+        <li><a href="../UBICACIONES/ubicaciones.html">UBICACIONES</a></li>
+        <li><a href="../NOSOTROS/NOSOTROS.HTML">NOSOTROS</a></li>
+        <li><a href="./SERVICIOS/servicios.html">SERVICIOS</a></li>
+        <li class="login-button"><a href="../LOGIN/login.html">LOGIN</a></li>
+      </ul>
+  </header>
 
-    <footer class="footer-container">
-      <div class="footer-section">
-        <h3>Te ayudamos</h3>
-        <ul class="footer-list">
-          <li>
-            <a href="../RECLAMACIONES/reclamaciones.html"
-              >Libro de reclamaciones</a
-            >
-          </li>
-          <li><a href="#">Atención por Whatsapp</a></li>
-          <li><a href="../SERVICIOS/servicios.html">Servicios</a></li>
-        </ul>
+  <!-- Carrito flotante -->
+  <div id="floating-cart" class="floating-cart hidden">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="cart-count" class="cart-count">0</span>
+  </div>
+
+  <div class="main-container">
+    <h1 class="page-title">Tu Carrito de Compras</h1>
+    <p class="page-subtitle">
+      Revisa tus productos antes de finalizar la compra
+    </p>
+
+    <div class="cart-container">
+      <div class="cart-items-section">
+        <h2 class="section-title">
+          <i class="fas fa-shopping-bag"></i>
+          Productos en tu carrito
+        </h2>
+        <div id="cart-items-container">
+          <div class="empty-cart">
+            <i class="fas fa-shopping-cart"></i>
+            <h3>Tu carrito está vacío</h3>
+            <p>Agrega algunos productos increíbles para comenzar</p>
+            <a href="../PRODUCTOS/productos.html" class="continue-shopping-btn">
+              Continuar Comprando
+            </a>
+          </div>
+        </div>
       </div>
 
-      <div class="footer-section">
-        <h3>Términos Legales</h3>
-        <ul class="footer-list">
-          <li>
-            <a href="../POLITICAS/politicas.html">Políticas de la Empresa</a>
-          </li>
-          <li>
-            <a href="../TERMINOS/terminos.html">Términos y Condiciones</a>
-          </li>
-        </ul>
-      </div>
+      <div class="cart-summary">
+        <h2 class="section-title">
+          <i class="fas fa-receipt"></i>
+          Resumen del pedido
+        </h2>
 
-      <div class="footer-section">
-        <h3>Nuestra Empresa</h3>
-        <ul class="footer-list">
-          <li><a href="../TRABAJA/trabaja.html">Trabaja con nosotros</a></li>
-          <li><a href="../NOSOTROS/nosotros.html">Nuestra Empresa</a></li>
-        </ul>
-      </div>
+        <div class="summary-row">
+          <span>Subtotal:</span>
+          <span id="subtotal">S/ 0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Envío:</span>
+          <span id="shipping">Gratis</span>
+        </div>
+        <div class="summary-row">
+          <span>Total:</span>
+          <span id="total">S/ 0.00</span>
+        </div>
 
-      <div class="footer-section">
-        <h3>Medios de pago</h3>
         <div class="payment-methods">
-          <img src="../imag/visa.png" alt="Visa" />
-          <img src="../imag/mastercard.png" alt="Mastercard" />
-          <img src="../imag/american.png" alt="American Express" />
-          <img src="../imag/pagoefectivo.png" alt="Pago Efectivo" />
+          <h3 style="color: #c7a17a; margin-bottom: 20px; font-size: 1.1rem">
+            Métodos de Pago
+          </h3>
+
+          <div class="payment-method selected" onclick="selectPaymentMethod(this, 'card')">
+            <input type="radio" name="payment" value="card" checked />
+            <div class="payment-info">
+              <div class="payment-brand">Tarjeta de Crédito/Débito</div>
+              <div class="payment-desc">
+                Visa, MasterCard, American Express
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-method" onclick="selectPaymentMethod(this, 'digital')">
+            <input type="radio" name="payment" value="yape" />
+            <div class="payment-info">
+              <div class="payment-brand">Yape</div>
+              <div class="payment-desc">Billetera Digital</div>
+            </div>
+          </div>
+
+          <div class="payment-method" onclick="selectPaymentMethod(this, 'digital')">
+            <input type="radio" name="payment" value="plin" />
+            <div class="payment-info">
+              <div class="payment-brand">Plin</div>
+              <div class="payment-desc">Billetera Digital</div>
+            </div>
+          </div>
         </div>
 
-        <h3 class="siguenos">Síguenos</h3>
-        <div class="social-icons">
-          <a href="https://www.instagram.com/marcu_sbarber/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Facebook"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
+        <!-- Formulario de Tarjeta -->
+        <div id="card-form" class="card-form">
+          <h4 class="form-title">
+            <i class="fas fa-credit-card"></i> Información de la Tarjeta
+          </h4>
+
+          <div class="form-group">
+            <label for="card-number">Número de Tarjeta</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" />
+            <div class="card-icons">
+              <i class="fab fa-cc-visa"></i>
+              <i class="fab fa-cc-mastercard"></i>
+              <i class="fab fa-cc-amex"></i>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="card-expiry">Fecha de Vencimiento</label>
+              <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5" />
+            </div>
+            <div class="form-group">
+              <label for="card-cvv">CVV</label>
+              <input type="text" id="card-cvv" placeholder="123" maxlength="4" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="card-name">Nombre del Titular</label>
+            <input type="text" id="card-name" placeholder="Nombre como aparece en la tarjeta" maxlength="50" />
+          </div>
         </div>
+
+        <!-- QR Codes para Billeteras Digitales -->
+        <div id="qr-section" class="qr-section hidden">
+          <h4 class="form-title">
+            <i class="fas fa-qrcode"></i> Escanea el código QR
+          </h4>
+
+          <div class="qr-container">
+            <div id="yape-qr" class="qr-code hidden">
+              <img src="../PAGOS/QR/yape.jfif" alt="Código QR Yape" />
+              <p>Escanea con tu app Yape</p>
+            </div>
+
+            <div id="plin-qr" class="qr-code hidden">
+              <img src="../PAGOS/QR/plin.jfif" alt="Código QR Plin" />
+              <p>Escanea con tu app Plin</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="checkout-btn" id="checkout-btn" onclick="processPayment()">
+          <i class="fas fa-lock"></i> Proceder al Pago
+        </button>
       </div>
-    </footer>
-
-    <div class="copyright">
-      <p>TODOS LOS DERECHOS RESERVADOS</p>
-      <p>© 2025 Marcus Barber Shop — Estilo que transforma.</p>
     </div>
-    <script src="../PAGOS/pagosJS.js"></script>
-  </body>
+  </div>
+
+  <footer class="footer-container">
+    <div class="footer-section">
+      <h3>Te ayudamos</h3>
+      <ul class="footer-list">
+        <li>
+          <a href="../RECLAMACIONES/reclamaciones.html">Libro de reclamaciones</a>
+        </li>
+        <li><a href="#">Atención por Whatsapp</a></li>
+        <li><a href="../SERVICIOS/servicios.html">Servicios</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Términos Legales</h3>
+      <ul class="footer-list">
+        <li>
+          <a href="../POLITICAS/politicas.html">Políticas de la Empresa</a>
+        </li>
+        <li>
+          <a href="../TERMINOS/terminos.html">Términos y Condiciones</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Nuestra Empresa</h3>
+      <ul class="footer-list">
+        <li><a href="../TRABAJA/trabaja.html">Trabaja con nosotros</a></li>
+        <li><a href="../NOSOTROS/nosotros.html">Nuestra Empresa</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Medios de pago</h3>
+      <div class="payment-methods">
+        <img src="../imag/visa.png" alt="Visa" />
+        <img src="../imag/mastercard.png" alt="Mastercard" />
+        <img src="../imag/american.png" alt="American Express" />
+        <img src="../imag/pagoefectivo.png" alt="Pago Efectivo" />
+      </div>
+
+      <h3 class="siguenos">Síguenos</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/marcu_sbarber/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="copyright">
+    <p>TODOS LOS DERECHOS RESERVADOS</p>
+    <p>© 2025 Marcus Barber Shop — Estilo que transforma.</p>
+  </div>
+  <script src="../PAGOS/pagosJS.js"></script>
+  <script src="../header.js"></script>
+</body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +9,28 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/x-icon" href="../imag/marcuss.png">
 </head>
+
 <body>
     <!-- Header - Reutilizo el mismo que estaba en el index.html -->
     <header class="header-container">
-        <a href="/"><div class="logo-container"></div>
-        <div class="logo-container">
-            <img src="../imag/marcuss.png" alt="Marcus Barber Shop Logo">
-            <div class="brand-name">
-                Marcus<br>
-                Barber Shop
+        <a href="/">
+            <div class="logo-container"></div>
+            <div class="logo-container">
+                <img src="../imag/marcuss.png" alt="Marcus Barber Shop Logo">
+                <div class="brand-name">
+                    Marcus<br>
+                    Barber Shop
+                </div>
             </div>
-        </div>
-        <ul class="menu">
-            <li><a href="/">INICIO</a></li>
-            <li><a href="../PRODUCTOS/productos.html">PRODUCTO</a></li>
-            <li><a href="../RESERVAS/reservas.html">RESERVAS</a></li>
-            <li><a href="../UBICACIONES/ubicaciones.html">UBICACIONES</a></li>
-            <li><a href="../NOSOTROS/NOSOTROS.HTML">NOSOTROS</a></li>
-            <li><a href="./SERVICIOS/servicios.html">SERVICIOS</a></li>
-            <li class="login-button"><a href="../LOGIN/login.html">LOGIN</a></li>
-        </ul>
+            <ul class="menu">
+                <li><a href="/">INICIO</a></li>
+                <li><a href="../PRODUCTOS/productos.html">PRODUCTO</a></li>
+                <li><a href="../RESERVAS/reservas.html">RESERVAS</a></li>
+                <li><a href="../UBICACIONES/ubicaciones.html">UBICACIONES</a></li>
+                <li><a href="../NOSOTROS/NOSOTROS.HTML">NOSOTROS</a></li>
+                <li><a href="./SERVICIOS/servicios.html">SERVICIOS</a></li>
+                <li class="login-button"><a href="../LOGIN/login.html">LOGIN</a></li>
+            </ul>
     </header>
 
     <main>
@@ -47,9 +50,11 @@
                     <div class="segunda-parte">
                         <label for="nombre">USUARIO O EMAIL:</label>
                         <input type="text" id="nombre" required>
+                        <p id="error-nombre"></p>
                         <label for="contrasena">CONTRASEÑA</label>
-                        <input type="text" id="contrasena" required>
-                        <button>Empezar</button>
+                        <input type="password" id="contrasena" required>
+                        <p id="error-password"></p>
+                        <button id="btn-login">Empezar</button>
                         <p>¿No tienes cuenta? <a href="../REGISTER/register.html">Registrate aquí</a></p>
                     </div>
                 </div>
@@ -60,6 +65,7 @@
             </div>
         </div>
     </main>
-
 </body>
+<script src="./login.js"></script>
+
 </html>
