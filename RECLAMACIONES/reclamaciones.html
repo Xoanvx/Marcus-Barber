@@ -102,13 +102,16 @@
             <textarea class="area" id="solicitud" name="solicitud" required></textarea>
 
 
-            <button type="submit" class="submit-button">ENVIAR RECLAMO</button>
+            <button type="button" id="btnEnviarReclamo" class="submit-button">ENVIAR RECLAMO</button>
 
             <div class="mensaje">
                 <p>Conforme a lo establecido en el Código de Protección y Defensa del Consumidor (Ley N° 29571) y el
                     Decreto Supremo N° 011-2011-PCM, Marcos Barber Shop pone a disposición de sus clientes el Libro de
                     Reclamaciones.</p>
             </div>
+        </div>
+        <div id="toast" class="toast hidden">
+            <span id="toast-message"></span>
         </div>
     </div>
 
@@ -165,5 +168,6 @@
     </div>
 </body>
 <script src="../header.js"></script>
+<script src="./reclamaciones.js"></script>
 
 </html>

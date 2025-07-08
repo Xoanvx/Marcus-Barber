@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles de producto | Marcus Barber Shop</title>
+
+    <link rel="stylesheet" href="../styleHeaderFooter.css" />
+    <link rel="stylesheet" href="../DETALLESPRODUCTO/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="../imag/marcuss.png" />
+</head>
+
+<body class="product-page">
+    <header class="header-container">
+        <a href="/">
+            <div class="logo-container">
+                <img src="../imag/marcuss.png" alt="Marcus Barber Shop Logo" />
+                <div class="brand-name">Marcus<br />Barber Shop</div>
+            </div>
+        </a>
+
+        <ul class="menu">
+            <li><a href="/">INICIO</a></li>
+            <li><a href="../PRODUCTOS/productos.html">PRODUCTOS</a></li>
+            <li><a href="../RESERVAS/reservas.html">RESERVAS</a></li>
+            <li><a href="../UBICACIONES/ubicaciones.html">UBICACIONES</a></li>
+            <li><a href="../NOSOTROS/NOSOTROS.HTML">NOSOTROS</a></li>
+            <li class="login-button"><a href="../LOGIN/login.html">LOGIN</a></li>
+        </ul>
+    </header>
+
+    <div id="floating-cart" class="floating-cart hidden">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count" class="cart-count">0</span>
+    </div>
+
+    <div class="breadcrumb">
+        <a href="../PRODUCTOS/productos.html">Listado de productos</a>
+        <span>&gt;</span>
+        <span id="breadcrumbNombre">Detalle</span>
+    </div>
+
+    <div class="product-container">
+        <div class="product-gallery">
+            <div class="main-image">
+                <img id="mainImage" src="" alt="Imagen principal del producto" />
+            </div>
+            <div class="thumbnail-gallery">
+                <div class="thumbnail active"><img id="img1" src="" alt="Vista 1" /></div>
+                <div class="thumbnail"><img id="img2" src="" alt="Vista 2" /></div>
+                <div class="thumbnail"><img id="img3" src="" alt="Vista 3" /></div>
+            </div>
+        </div>
+
+        <div class="product-info">
+            <div class="product-rating">
+            </div>
+
+            <h1 class="product-title" id="nombreProducto"></h1>
+
+            <div class="product-price" id="precioProducto"></div>
+
+            <div class="product-details">
+                <div class="detail-row"><span class="detail-label">Marca:</span><span class="detail-value"
+                        id="marcaProducto"></span></div>
+                <div class="detail-row"><span class="detail-label">Producto:</span><span class="detail-value"
+                        id="categoriaProducto"></span></div>
+                <div class="detail-row"><span class="detail-label">Stock:</span><span class="detail-value"
+                        id="stockProducto"></span></div>
+            </div>
+
+            <div class="quantity-selector">
+                <span class="quantity-label">Cantidad:</span>
+                <div class="quantity-controls">
+                    <button class="quantity-btn">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" />
+                    <button class="quantity-btn">+</button>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-primary">Añadir al carrito</button>
+                <button class="btn-secondary">Pagar ahora</button>
+            </div>
+
+            <div class="shipping-info">
+                <div class="shipping-item">
+                    <i class="fas fa-truck shipping-icon"></i>
+                    <span class="shipping-text">Envío gratis en pedidos &gt; S/ 350</span>
+                </div>
+                <div class="shipping-item">
+                    <i class="fas fa-clock shipping-icon"></i>
+                    <span class="shipping-text">Entrega estimada: 3-7 días hábiles</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-tabs">
+        <div class="tab-navigation">
+            <button class="tab-button active">Descripción</button>
+        </div>
+        <div class="tab-content active-content">
+            <div class="description-text" id="descripcionProducto">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-container">
+    </footer>
+
+    <script src="./DetallesProducto.js"></script>
+    <script src="./productoJS.js"></script>
+</body>
+
+</html>

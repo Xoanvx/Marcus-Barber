@@ -39,32 +39,27 @@ class CartManager {
       .map(
         (item) => `
                     <div class="cart-item" data-id="${item.id}">
-                        <img src="${item.image}" alt="${
-          item.name
-        }" class="item-image">
+                        <img src="${item.image}" alt="${item.name
+          }" class="item-image">
                         <div class="item-info">
                             <div class="item-name">${item.name}</div>
                             <div class="item-price">S/ ${item.price.toFixed(
-                              2
-                            )}</div>
+            2
+          )}</div>
                             <div class="quantity-controls">
-                                <button class="quantity-btn decrease-btn" onclick="cartManager.updateQuantity('${
-                                  item.id
-                                }', -1)">
+                                <button class="quantity-btn decrease-btn" onclick="cartManager.updateQuantity('${item.id
+          }', -1)">
                                     <i class="fas fa-minus"></i>
                                 </button>
-                                <span class="quantity-display">${
-                                  item.quantity
-                                }</span>
-                                <button class="quantity-btn increase-btn" onclick="cartManager.updateQuantity('${
-                                  item.id
-                                }', 1)">
+                                <span class="quantity-display">${item.quantity
+          }</span>
+                                <button class="quantity-btn increase-btn" onclick="cartManager.updateQuantity('${item.id
+          }', 1)">
                                     <i class="fas fa-plus"></i>
                                 </button>
                             </div>
-                            <button class="remove-btn" onclick="cartManager.removeItem('${
-                              item.id
-                            }')">
+                            <button class="remove-btn" onclick="cartManager.removeItem('${item.id
+          }')">
                                 <i class="fas fa-trash"></i> Eliminar
                             </button>
                         </div>
@@ -258,9 +253,39 @@ function updateCheckoutButton() {
 }
 
 function processPayment() {
-  const selectedMethod = document.querySelector(
-    'input[name="payment"]:checked'
-  );
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    showToast("Debes iniciar sesión para completar el pago", "error");
+
+    // Mostrar mensaje flotante cerca al carrito (opcional)
+    const loginWarning = document.createElement("div");
+    loginWarning.textContent = "⚠️ Inicia sesión para pagar";
+    loginWarning.style.position = "absolute";
+    loginWarning.style.bottom = "60px";
+    loginWarning.style.right = "20px";
+    loginWarning.style.backgroundColor = "#ffdddd";
+    loginWarning.style.color = "#a00";
+    loginWarning.style.padding = "10px 15px";
+    loginWarning.style.borderRadius = "5px";
+    loginWarning.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
+    loginWarning.style.zIndex = "1000";
+    loginWarning.id = "login-warning";
+
+    // Evitar duplicados
+    if (!document.getElementById("login-warning")) {
+      document.body.appendChild(loginWarning);
+
+      // Desaparece después de 3 segundos
+      setTimeout(() => {
+        loginWarning.remove();
+      }, 3000);
+    }
+
+    return;
+  }
+
+  const selectedMethod = document.querySelector('input[name="payment"]:checked');
   const total = document.getElementById("total").textContent;
 
   if (
@@ -269,49 +294,58 @@ function processPayment() {
     !document.getElementById("checkout-btn").disabled
   ) {
     const loadingBtn = document.getElementById("checkout-btn");
-    loadingBtn.innerHTML =
-      '<i class="fas fa-spinner fa-spin"></i> Procesando...';
+    loadingBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
     loadingBtn.disabled = true;
 
-    setTimeout(() => {
-      let paymentMethodName = "";
-      if (selectedMethod.value === "card") {
-        paymentMethodName = "Tarjeta de Crédito/Débito";
-      } else {
-        paymentMethodName = selectedMethod.value.toUpperCase();
-      }
+    const detallesPedidoDTOS = Object.values(cartManager.cart).map(item => ({
+      nombreProducto: item.name,
+      cantidad: item.quantity
+    }));
 
-      alert(
-        `Pago realizado con éxito con ${paymentMethodName} por un total de ${total}`
-      );
+    fetch("http://localhost:8080/pedido", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+      body: JSON.stringify({ detallesPedidoDTOS })
+    })
+      .then(response => {
+        if (!response.ok) throw new Error("Error al procesar el pedido");
+        return response.json();
+      })
+      .then(() => {
+        showToast("¡Pago realizado con éxito!");
 
-      localStorage.removeItem("barbershop_cart");
-      cartManager.cart = {};
-      cartManager.renderCart();
-      cartManager.updateFloatingCart();
+        localStorage.removeItem("barbershop_cart");
+        cartManager.cart = {};
+        cartManager.renderCart();
+        cartManager.updateFloatingCart();
 
-      loadingBtn.innerHTML = '<i class="fas fa-lock"></i> Proceder al Pago';
+        loadingBtn.innerHTML = '<i class="fas fa-lock"></i> Proceder al Pago';
 
-      // Limpiar formulario
-      document.getElementById("card-number").value = "";
-      document.getElementById("card-expiry").value = "";
-      document.getElementById("card-cvv").value = "";
-      document.getElementById("card-name").value = "";
+        ["card-number", "card-expiry", "card-cvv", "card-name"].forEach(id => {
+          document.getElementById(id).value = "";
+        });
 
-      // Remover clases de validación
-      document.querySelectorAll(".form-group input").forEach((input) => {
-        input.classList.remove("valid", "error");
+        document.querySelectorAll(".form-group input").forEach(input => {
+          input.classList.remove("valid", "error");
+        });
+
+        isFormValid = false;
+        updateCheckoutButton();
+      })
+      .catch(() => {
+        showToast("Error al procesar el pago", true);
+        loadingBtn.innerHTML = '<i class="fas fa-lock"></i> Proceder al Pago';
+        loadingBtn.disabled = false;
       });
-
-      isFormValid = false;
-      updateCheckoutButton();
-    }, 2000);
   } else {
-    alert(
-      "Por favor, completa todos los campos del formulario o selecciona un método de pago válido."
-    );
+    showToast("Completa los campos o selecciona un método de pago", true);
   }
 }
+
+
 
 // Inicialización cuando la página carga
 document.addEventListener("DOMContentLoaded", function () {
@@ -376,3 +410,17 @@ document.addEventListener("DOMContentLoaded", function () {
     validateForm();
   });
 });
+
+
+function showToast(message, type = "success") {
+  const toast = document.getElementById("toast");
+  const messageElement = document.getElementById("toast-message");
+
+  toast.className = `toast ${type}`;
+  messageElement.textContent = message;
+  toast.classList.remove("hidden");
+
+  setTimeout(() => {
+    toast.classList.add("hidden");
+  }, 3000);
+}

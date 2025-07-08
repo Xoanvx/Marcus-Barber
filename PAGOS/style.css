@@ -492,3 +492,34 @@ body {
     height: 150px;
   }
 }
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #323232;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  z-index: 10000;
+  opacity: 0.95;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.toast.hidden {
+  display: none;
+}
+
+.toast.success {
+  background-color: #28a745;
+}
+
+.toast.error {
+  background-color: #dc3545;
+}
+
+.toast.warning {
+  background-color: #ffc107;
+  color: #000;
+}

@@ -74,7 +74,7 @@ class FloatingCart {
     const productTitle = document
       .querySelector(".product-title")
       .textContent.trim();
-    const productId = this.generateProductId(productTitle);
+    const productId = document.querySelector(".btn-primary").getAttribute("data-id");
 
     // Extraer precio (remover "S/ " y convertir a número)
     const priceText = document
@@ -88,7 +88,7 @@ class FloatingCart {
     const image = document.querySelector("#mainImage").src;
 
     return {
-      id: productId,
+      id: parseInt(productId),
       name: productTitle,
       price: price,
       image: image,
@@ -143,16 +143,12 @@ class FloatingCart {
     // Animación del carrito
     this.floatingCart.style.animation = "bounce 0.6s ease";
 
-    // Mostrar notificación
-    alert(`✅ "${productName}" agregado al carrito`);
-
     setTimeout(() => {
       this.floatingCart.style.animation = "";
     }, 600);
   }
 }
 
-// Inicializar cuando la página cargue
 document.addEventListener("DOMContentLoaded", () => {
   new FloatingCart();
 });
