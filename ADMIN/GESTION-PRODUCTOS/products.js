@@ -175,36 +175,56 @@ function initializeProductsPage() {
 }
 
 // Load products from API
-async function loadProducts() {
+async function loadProducts(page = 0) {
   try {
-    // Simulate API call - replace with actual API
-    products = [
-      {
-        id: 1,
-        nombre: "Corte Clásico",
-        categoria: "CORTES",
-        precio: 1500,
-        stock: 0,
-        descripcion: "Corte tradicional de cabello",
-        imagen: "/placeholder.svg?height=50&width=50",
-      },
-      {
-        id: 2,
-        nombre: "Shampoo Premium",
-        categoria: "PRODUCTOS",
-        precio: 2500,
-        stock: 15,
-        descripcion: "Shampoo de alta calidad",
-        imagen: "/placeholder.svg?height=50&width=50",
-      },
-    ]
+    const token = localStorage.getItem("token");
+    if (!token) {
+      showToast("Token no encontrado", "error");
+      window.location.href = "../LOGIN/login.html";
+      return;
+    }
 
-    renderProducts()
+    // Obtener filtros del DOM
+    const nombre = document.getElementById("searchInput")?.value.trim();
+    const categoria = document.getElementById("categoryFilter")?.value;
+    const marca = document.getElementById("brandFilter")?.value;
+    const stock = document.getElementById("stockFilter")?.value;
+
+    // Construir URL con parámetros
+    const params = new URLSearchParams();
+    params.append("page", page);
+
+    if (nombre) params.append("nombre", nombre);
+    if (categoria) params.append("categoria", categoria);
+    if (marca) params.append("marca", marca);
+
+    // Solo enviar el filtro de stock si es "bajo" o "sin"
+    if (stock === "bajo" || stock === "sin") {
+      params.append("stock", stock);
+    }
+
+    const response = await fetch(`http://localhost:8080/admin/producto?${params.toString()}`, {
+      method: "GET",
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json"
+      }
+    });
+
+    if (!response.ok) throw new Error("No se pudo cargar los productos");
+
+    const data = await response.json();
+    products = data.content || [];
+
+    renderProducts();
   } catch (error) {
-    console.error("Error loading products:", error)
-    showToast("Error al cargar productos", "error")
+    console.error("Error loading products:", error);
+    showToast("❌ Error al cargar productos", "error");
   }
 }
+
+
+
 
 function renderProducts() {
   const tbody = document.getElementById("productsTableBody")
@@ -254,57 +274,23 @@ function renderProducts() {
 }
 
 function filterProducts() {
-  const searchTerm = document.getElementById("searchInput")?.value.toLowerCase() || ""
-  const categoryFilter = document.getElementById("categoryFilter")?.value || ""
-  const stockFilter = document.getElementById("stockFilter")?.value || ""
+  const searchTerm = document.getElementById("searchInput")?.value.trim() || "";
+  const categoryFilter = document.getElementById("categoryFilter")?.value || "";
+  const stockFilter = document.getElementById("stockFilter")?.value || "";
 
-  const filtered = products.filter((product) => {
-    const matchesSearch =
-      product.nombre.toLowerCase().includes(searchTerm) || product.descripcion.toLowerCase().includes(searchTerm)
-    const matchesCategory = !categoryFilter || product.categoria === categoryFilter
-    const matchesStock =
-      !stockFilter ||
-      (stockFilter === "low" && product.stock > 0 && product.stock <= 5) ||
-      (stockFilter === "out" && product.stock === 0)
+  // Convertir filtro de stock al formato esperado por el backend
+  let stockParam = "";
+  if (stockFilter === "low") stockParam = "low";
+  else if (stockFilter === "out") stockParam = "out";
 
-    return matchesSearch && matchesCategory && matchesStock
-  })
-
-  const tbody = document.getElementById("productsTableBody")
-  if (tbody) {
-    tbody.innerHTML = filtered
-      .map(
-        (product) => `
-      <tr>
-        <td>
-          <img src="${product.imagen}" alt="${product.nombre}" 
-               style="width: 40px; height: 40px; border-radius: 6px; object-fit: cover;">
-        </td>
-        <td>${product.nombre}</td>
-        <td>${product.categoria}</td>
-        <td>${formatCurrency(product.precio)}</td>
-        <td>${product.stock}</td>
-        <td>
-          <span class="status-badge ${product.stock > 0 ? "completed" : "cancelled"}">
-            ${product.stock > 0 ? "Disponible" : "Sin Stock"}
-          </span>
-        </td>
-        <td>
-          <div class="action-buttons">
-            <button class="action-btn-sm edit" onclick="editProduct(${product.id})">
-              Editar
-            </button>
-            <button class="action-btn-sm delete" onclick="deleteProduct(${product.id})">
-              Eliminar
-            </button>
-          </div>
-        </td>
-      </tr>
-    `,
-      )
-      .join("")
-  }
+  // Llama a la API con los filtros
+  loadProducts({
+    categoria: categoryFilter,
+    nombre: searchTerm,
+    stock: stockParam
+  });
 }
+
 
 function openProductModal(product = null) {
   currentProduct = product

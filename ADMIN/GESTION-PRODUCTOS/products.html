@@ -115,7 +115,7 @@
                 <div class="filters-section">
                     <div class="search-box">
                         <span class="search-icon">🔍</span>
-                        <input type="text" id="searchInput" placeholder="Buscar productos...">
+                        <input type="text" id="searchInput" placeholder="Buscar productos por nombre...">
                     </div>
 
                     <div class="filter-group">
@@ -127,9 +127,9 @@
                         </select>
 
                         <select id="stockFilter">
-                            <option value="">Todo el stock</option>
-                            <option value="low">Stock bajo</option>
-                            <option value="out">Sin stock</option>
+                            <option value="todo">Todo el stock</option>
+                            <option value="bajo">Stock bajo</option>
+                            <option value="sin">Sin stock</option>
                         </select>
                     </div>
                 </div>
@@ -262,7 +262,7 @@
 
     <div class="toast" id="toast"></div>
 
-    <script src="./gestionProductos.js"></script>
+    <script src="./products.js"></script>
 </body>
 
 </html>
