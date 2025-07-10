@@ -473,3 +473,8 @@
     padding: 0.5rem;
   }
 }
+
+.imagenes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

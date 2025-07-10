@@ -224,8 +224,24 @@
                 <div class="form-section">
                     <h3>Imagen del Producto</h3>
 
-                    <div class="form-group">
-                        <label for="productImage">Imagen</label>
+                    <div class="form-group imagenes">
+                        <label for="productImage">Imagen Principal</label>
+                        <div class="image-upload">
+                            <div class="image-preview" id="imagePreview"
+                                onclick="document.getElementById('productImage').click()">
+                                <span class="upload-text">Seleccionar imagen</span>
+                            </div>
+                            <input type="file" id="productImage" name="imagen" accept="image/*" style="display: none;">
+                        </div>
+                        <label for="productImage">Imagen Secundario</label>
+                        <div class="image-upload">
+                            <div class="image-preview" id="imagePreview"
+                                onclick="document.getElementById('productImage').click()">
+                                <span class="upload-text">Seleccionar imagen</span>
+                            </div>
+                            <input type="file" id="productImage" name="imagen" accept="image/*" style="display: none;">
+                        </div>
+                        <label for="productImage">Imagen Terciario</label>
                         <div class="image-upload">
                             <div class="image-preview" id="imagePreview"
                                 onclick="document.getElementById('productImage').click()">
@@ -246,11 +262,7 @@
 
     <div class="toast" id="toast"></div>
 
-    <script src="../js/config.js"></script>
-    <script src="../js/utils.js"></script>
-    <script src="../js/auth.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/products.js"></script>
+    <script src="./gestionProductos.js"></script>
 </body>
 
 </html>
