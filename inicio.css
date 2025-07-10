@@ -1,0 +1,678 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.inicioMarcus, .inicioMarcusMovil {
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    background-color: #fff;
+
+    img {
+        width: 100%;
+        height: auto;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    button {
+        position: absolute;
+        left: 27%;
+        bottom: 20%;
+        transform: translate(-50%, 50%);
+        color: white;
+        background-color: rgba(255, 240, 240, 0);
+        padding: 1vw 4vw;
+        font-size: 1.2vw;
+        font-weight: 100;
+        border: 3px solid #875E4B;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #6b441d38;
+        cursor: pointer;
+        /* font-weight: 900; */
+        font-size: 1.3vw;
+    }
+}
+
+.hero {
+    width: 100%;
+    height: 15vh;
+    max-height: 100px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+  .hero1{
+		width: 25vw;
+	}
+	.hero2{
+		width: 40vw;
+	}
+
+	.hero1, .hero2 {
+    max-height: 60%;
+    width: auto; /* Elimina el ancho relativo */
+    object-fit: contain; /* Mantiene proporciones sin deformar */
+  }
+
+}
+
+
+.carrusel {
+	background-color: #060606;
+	/* background-color: #49eaff; */
+	display: flex;
+	flex-direction: row;
+  height: 500px;
+  justify-content: space-around;
+
+	.herramientas{
+		height: 100%;
+	}
+
+}
+
+.car2{
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+  width: 40%;
+  align-items: center;
+}
+
+.textoCar{
+  /* background-color: #875E4B; */
+  text-align: left;
+  width: 100%;
+  padding-top: 20px;
+  font-size: 1.4rem;
+}
+
+.slider.autoplay {
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+  position: relative;
+  background-color: #060606;
+  /* background-color: green; */
+
+}
+
+.slider.autoplay.movil{
+  display: none;;
+}
+
+.slide-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  animation: slide 30s infinite;
+  /* background-color: red; */
+}
+
+.slide {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+
+  .medio {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .box {
+      margin: 20px;
+      background-color: #0A0A0A;
+      width: 80%;
+      height: 80%;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+
+     .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px;
+        height: 100%;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+        font-style: italic;
+        font-size: 1.1rem;
+        font-weight: 100;
+        overflow: hidden;
+      }
+
+
+      .content p {
+        margin-bottom: 1rem;
+      }
+
+      .autor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-top: auto;
+        font-style: normal;
+        font-size: 0.9rem;
+
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+
+        h3 {
+          text-align: left;
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+      }
+
+    }
+
+  }
+}
+
+.slide img {
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0%); }       /* Slide 1 */
+  16%  { transform: translateX(0%); }
+
+  20%  { transform: translateX(-50%); }     /* Slide 2 */
+  36%  { transform: translateX(-50%); }
+
+  40%  { transform: translateX(-100%); }    /* Slide 3 */
+  56%  { transform: translateX(-100%); }
+
+  60%  { transform: translateX(-150%); }    /* Slide 4 */
+  76%  { transform: translateX(-150%); }
+
+  80%  { transform: translateX(-200%); }    /* Slide 5 */
+  100% { transform: translateX(-200%); }
+}
+
+.inicioMarcus{
+  display: flex;
+}
+
+.inicioMarcusMovil{
+  display: none;
+}
+
+.Arte{
+  background-color: #24231F;
+  padding: 20px;
+
+  .textoArte{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    h2{
+      font-size: 2rem;
+    }
+    p{
+      font-size: 1rem;
+      font-weight: 100;
+      margin-top: 10px;
+    }
+  }
+}
+.Expertos{
+  background-color: #000000;
+  padding:  20px;
+  
+
+.TextoExpertos{
+  display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  h2{
+    font-size: 28px;
+  }
+  p{
+      font-size: 1rem;
+      font-weight: 100;
+      margin-top: 10px;
+    }
+  } 
+}
+.Cuadro_maestro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.cuadro_cambio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cuadro_cambio img {
+  margin-top: 20px;
+  width: 230px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  filter: grayscale(100%);
+  transition: all 0.5s ease;
+}
+
+.cuadro_cambio img:hover {
+  width: 230px;
+  height: 330px;
+  filter: grayscale(0%);
+  transition: all 0.5s ease;
+  cursor: pointer
+}
+
+.nombre_estilista {
+  margin: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  color: #4b4949;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.cuadro_estilista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  border: white 1px solid;  
+  transition: all 0.3s ease;
+
+}
+
+.cuadro_estilista img {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-bottom: white 1px solid;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.cuadro_estilista:hover {
+  img{
+    filter: grayscale(0%);
+    cursor: pointer;
+  }
+  transform: scale(1.05); /* agranda un poco la imagen */
+
+  .nombre_estilista {
+    font-size: 17px;
+    color: #cdcdcd;
+  }
+}
+
+.Cambios{
+  background-color: #242424;
+  padding:  20px;
+.TextoCambios{
+  display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  h2{
+    font-size: 28px;
+  }
+  p{
+      font-size: 1rem;
+      font-weight: 100;
+      margin-top: 10px;
+    }
+  } 
+}
+
+
+.Arte{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.imgsArte {
+  /* background-color: red;; */
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch; 
+
+  .cuadroExtra, .cuadro {
+    width: 25%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cuadro img,
+  .cuadroExtra img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 1rem;
+    filter: grayscale(100%);
+    transition: transform 1s ease; /* suaviza el efecto */
+  }
+
+  .cuadro img:hover,
+  .cuadroExtra img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05); /* agranda un poco la imagen */
+    cursor: pointer; /* cambia el cursor al pasar por encima */
+  }
+
+  .cuadro {
+    .subcuadros {
+      width: 100%;
+      height: 48%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      .mini {
+        width: 48%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1000px) {
+
+  .imgsArte {
+  width: 100%;
+  }
+
+  .carrusel{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .car2{
+    width: 80%;
+  }
+
+  .content p{
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    width: 100%;
+    height: 13vh;
+    max-height: none;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+
+    .hero1, .hero2 {
+      height: 40%;
+      max-height: 60%;
+      width: auto; /* Elimina el ancho relativo */
+      object-fit: contain; /* Mantiene proporciones sin deformar */
+    }
+  }
+
+  .textoCar{
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .inicioMarcus{
+    display: none;
+  }
+
+  .inicioMarcusMovil{
+    display: flex;
+
+    button {
+      position: absolute;
+      left: 50%;
+      bottom: 60%;
+      transform: translate(-50%, 50%);
+      color: white;
+      background-color: rgba(255, 240, 240, 0);
+      padding: 4vw 7vw;
+      font-size: 4vw;
+      font-weight: 100;
+      border: 3px solid #875E4B;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #6b441d38;
+      cursor: pointer;
+      font-size: 4vw;
+    }
+  }
+
+  .imgsArte{
+    height: auto;
+    flex-direction: column; 
+    align-items: center;
+    padding: 20px;
+    
+    .cuadro{ /*cuadro verde*/
+      width: 95%;
+      height: 900px;
+      max-height: 300px;
+    }
+
+    .cuadroExtra{ /*cuadro morado*/
+      width: 50%;
+    }
+  }
+}
+
+
+ .Ventas{
+  background-color: white;
+  padding:  20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .TextoVentas{
+    display: flex;
+      flex-direction: column;
+      color: rgb(0, 0, 0);
+      padding: 20px;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    h2{
+      font-size: 28px;
+    }
+    p{
+        font-size: 1rem;
+        font-weight: 100;
+        margin-top: 10px;
+      }
+    } 
+}
+
+
+/*EXTRAIDO DE PRODUCTOS CSS*/
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas por defecto */
+  gap: 20px;
+  width: 100%;
+  max-width: 700px; /* Ancho máximo del grid */
+  justify-items: center; /* Centra los items dentro de sus celdas */
+}
+
+
+.product {
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.product:hover{
+    width: 220px;
+    h4{
+      font-size: 21px;
+      transition: all 0.3s ease;
+    }
+
+    .bordeado{
+      box-shadow: 0px 20px 21px -15px rgb(100, 73, 49);
+      transition: all 0.3s ease;
+    }
+}
+
+.bordeado{
+  background-color: rgb(255, 255, 255);
+  border: 10px rgb(255, 255, 255) solid;
+  box-shadow: 0px 10px 21px -15px rgb(100, 73, 49);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  
+}
+
+.product h3 {
+  font-size: 16px;
+  text-shadow: 0px 2px 5px rgba(49, 49, 49, 0.521);
+  margin: 10px 0;
+  color: black;
+}
+
+.product h4 {
+  font-weight: 300px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  margin: 10px 0;
+  color: #875E4B;
+}
+
+.product p {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas para pantallas medianas */
+  }
+
+  .slider.autoplay{
+    display: none;;
+  }
+
+  .slider.autoplay.movil{
+    display: flex;
+  }
+
+  .herramientas{
+    max-width: 80vw;
+  }
+
+  .slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide .medio{
+    width: 80%;;
+  }
+
+  .slide img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @keyframes slide {
+    0%   { transform: translateX(0%); }       /* Slide 1 */
+    16%  { transform: translateX(0%); }
+
+    20%  { transform: translateX(-100%); }     /* Slide 2 */
+    36%  { transform: translateX(-100%); }
+
+    40%  { transform: translateX(-200%); }    /* Slide 3 */
+    56%  { transform: translateX(-200%); }
+
+    60%  { transform: translateX(-300%); }    /* Slide 4 */
+    76%  { transform: translateX(-300%); }
+
+    80%  { transform: translateX(-400%); }    /* Slide 5 */
+    100% { transform: translateX(-400%); }
+  }
+
+  .cuadro_cambio img {
+    filter: grayscale(100%);
+  }
+
+  .cuadro_estilista {
+    img{
+      filter: grayscale(0%);
+      cursor: pointer;
+    }
+
+    .nombre_estilista {
+      font-size: 17px;
+      color: #cdcdcd;
+    }
+  }
+
+  .imgsArte.cuadro img,
+  .cuadroExtra img {
+    filter: grayscale(0%);
+  }
+
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr; /* 1 columna para pantallas pequeñas */
+  }
+}

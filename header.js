@@ -21,7 +21,7 @@
     function showLogoutButton() {
         const li = document.createElement("li");
         li.className = "logout-button";
-        li.innerHTML = '<a id="logout-link" href="#">SALIR</a>';
+        li.innerHTML = '<button id="logout-link" href="#"><a>Salir</a></button>';
         nav.replaceChild(li, loginLi);
         document.getElementById("logout-link").addEventListener("click", () => {
             localStorage.removeItem("token");
@@ -46,7 +46,7 @@
 
         if (!payload || isExpired(payload.exp)) {
             localStorage.removeItem("token");
-            return;                    
+            return;
         }
 
         showLogoutButton();

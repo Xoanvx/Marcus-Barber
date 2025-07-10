@@ -90,27 +90,35 @@ body {
 }
 
 /* Estilos específicos para el botón de login */
-.login-button {
+.login-button,
+#logout-link {
     border: 2px solid #333;
     border-radius: 5px;
-    padding: 10px 20px; /* ajustar el tamño del botón */
+    padding: 10px 20px;
+    /* ajustar el tamño del botón */
     transition: all 0.3s ease;
 }
 
-.login-button a {
+.login-button a,
+#logout-link a {
     padding: 5px 15px;
 }
 
-.login-button:hover {
+.login-button:hover,
+#logout-link:hover {
     background-color: #333;
 }
 
-.login-button:hover a {
-    color: #c7a17a; /*probablemente aqui cree un boton dentro de otro boton XDDD */
+.login-button:hover a,
+#logout-link:hover a {
+    color: #c7a17a;
+    /*probablemente aqui cree un boton dentro de otro boton XDDD */
 }
 
-.login-button a::after {
-    display: none; /* Eliminar el subrayado para el botón de login */
+.login-button a::after,
+#logout-link:hover a::after {
+    display: none;
+    /* Eliminar el subrayado para el botón de login */
 }
 
 /* Responsive para dispositivos móviles */
@@ -119,13 +127,13 @@ body {
         flex-direction: column;
         padding: 15px 20px;
     }
-    
+
     .menu {
         margin-top: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .menu li {
         margin: 5px 10px;
     }
@@ -137,7 +145,8 @@ body {
 
 /* Estilos del footer */
 .footer-container {
-    background-color: #e0e0e0; /* Color gris claro similar al de la imagen */
+    background-color: #e0e0e0;
+    /* Color gris claro similar al de la imagen */
     color: #333;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -203,7 +212,8 @@ body {
     background-color: #333;
     color: #fff;
     transition: all 0.3s ease;
-    text-decoration: none; /* Quita la línea debajo del ícono */
+    text-decoration: none;
+    /* Quita la línea debajo del ícono */
 
 }
 
@@ -232,7 +242,7 @@ body {
     .footer-container {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .hero-section h1 {
         font-size: 2.5rem;
     }
@@ -242,7 +252,7 @@ body {
     .hero-section {
         padding: 50px 20px;
     }
-    
+
     .hero-section h1 {
         font-size: 2rem;
     }
@@ -271,7 +281,7 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     z-index: 1000;
     font-size: 20px;
@@ -303,7 +313,20 @@ body {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(-50%) scale(1); }
-    40% { transform: translateY(-50%) scale(1.2); }
-    60% { transform: translateY(-50%) scale(1.1); }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(-50%) scale(1);
+    }
+
+    40% {
+        transform: translateY(-50%) scale(1.2);
+    }
+
+    60% {
+        transform: translateY(-50%) scale(1.1);
+    }
 }
