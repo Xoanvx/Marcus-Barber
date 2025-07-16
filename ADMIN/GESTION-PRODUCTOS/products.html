@@ -121,9 +121,6 @@
                     <div class="filter-group">
                         <select id="categoryFilter">
                             <option value="">Todas las categorías</option>
-                            <option value="CORTES">Cortes</option>
-                            <option value="PRODUCTOS">Productos</option>
-                            <option value="SERVICIOS">Servicios</option>
                         </select>
 
                         <select id="stockFilter">
@@ -141,10 +138,10 @@
                             <tr>
                                 <th>Imagen</th>
                                 <th>Nombre</th>
+                                <th>Marca</th>
                                 <th>Categoría</th>
                                 <th>Precio</th>
                                 <th>Stock</th>
-                                <th>Estado</th>
                                 <th>Acciones</th>
                                 <!-- En acciones debe haber eliminar y editar -->
                                 <!-- Al momento de crear un nuevo producto se debe subir 3 imagenes -->
@@ -166,8 +163,14 @@
                     </div>
                 </div>
             </div>
+            <div class="pagination-controls">
+                <button class="btn" id="prevPageBtn">⬅ Anterior</button>
+                <button class="btn" id="nextPageBtn">Siguiente ➡</button>
+            </div>
+
         </main>
     </div>
+
 
     <!-- Product Modal -->
     <div class="modal" id="productModal">
@@ -181,24 +184,26 @@
                 <div class="form-section">
                     <h3>Información Básica</h3>
 
+                    <div class="form-group">
+                        <label for="productName">Nombre del Producto *</label>
+                        <input type="text" id="productName" name="nombre" required>
+                        <span class="error-message" id="nombreError"></span>
+                    </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="productName">Nombre del Producto *</label>
-                            <input type="text" id="productName" name="nombre" required>
-                            <span class="error-message" id="nombreError"></span>
+                            <label for="productMarca">Marca</label>
+                            <input type="text" id="productMarca" name="marca">
+                            <span class="error-message" id="stockError"></span>
                         </div>
 
                         <div class="form-group">
                             <label for="productCategory">Categoría *</label>
-                            <select id="productCategory" name="categoria" required>
-                                <option value="">Seleccionar categoría</option>
-                                <option value="CORTES">Cortes</option>
-                                <option value="PRODUCTOS">Productos</option>
-                                <option value="SERVICIOS">Servicios</option>
-                            </select>
+                            <input type="text" id="productCategory" name="categoria" required>
                             <span class="error-message" id="categoriaError"></span>
                         </div>
                     </div>
+
+
 
                     <div class="form-row">
                         <div class="form-group">
@@ -225,30 +230,33 @@
                     <h3>Imagen del Producto</h3>
 
                     <div class="form-group imagenes">
-                        <label for="productImage">Imagen Principal</label>
+                        <!-- Imagen Principal -->
+                        <!-- Imagen Principal -->
+                        <label>Imagen Principal</label>
                         <div class="image-upload">
-                            <div class="image-preview" id="imagePreview"
-                                onclick="document.getElementById('productImage').click()">
+                            <div class="image-preview" id="imagePreview1" onclick="document.getElementById('productImage').click()">
                                 <span class="upload-text">Seleccionar imagen</span>
                             </div>
-                            <input type="file" id="productImage" name="imagen" accept="image/*" style="display: none;">
+                            <input type="file" id="productImage1" name="imagen" accept="image/*" style="display:none;">
                         </div>
+                        <!-- Imagen Secundaria -->
                         <label for="productImage">Imagen Secundario</label>
                         <div class="image-upload">
-                            <div class="image-preview" id="imagePreview"
-                                onclick="document.getElementById('productImage').click()">
+                            <div class="image-preview" id="imagePreview" onclick="document.getElementById('productImage').click()">
                                 <span class="upload-text">Seleccionar imagen</span>
                             </div>
                             <input type="file" id="productImage" name="imagen" accept="image/*" style="display: none;">
                         </div>
-                        <label for="productImage">Imagen Terciario</label>
+                        <!-- Imagen Terciaria-->
+                        <label for="productImage3">Imagen Terciario</label>
                         <div class="image-upload">
-                            <div class="image-preview" id="imagePreview"
-                                onclick="document.getElementById('productImage').click()">
+                            <div class="image-preview" id="imagePreview3" onclick="document.getElementById('productImage').click()">
                                 <span class="upload-text">Seleccionar imagen</span>
                             </div>
-                            <input type="file" id="productImage" name="imagen" accept="image/*" style="display: none;">
+                            <input type="file" id="productImage3" name="imagen" accept="image/*" style="display: none;">
                         </div>
+
+
                     </div>
                 </div>
 
@@ -263,6 +271,7 @@
     <div class="toast" id="toast"></div>
 
     <script src="./products.js"></script>
+    <script src="./crearProducto.js"></script>
 </body>
 
 </html>
