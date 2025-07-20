@@ -40,7 +40,7 @@ document.querySelector(".boton-reserva").addEventListener("click", function (e) 
         detalles,
     };
 
-    fetch("http://localhost:8080/reserva", {
+    fetch("https://marcus-barber.azurewebsites.net/reserva", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

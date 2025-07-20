@@ -25,7 +25,7 @@ function showToast(msg, type = "info") {
 }
 
 function handleError(err, ctx) {
-  console.error(`Error in ${ctx}:`, err);
+  console.error(`Error en ${ctx}:`, err);
   showToast("❌ Ha ocurrido un error", "error");
 }
 
@@ -39,8 +39,6 @@ const debounce = (fn, w) => {
 
 const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
-/* ---------- Inicialización ---------- */
-
 document.addEventListener("DOMContentLoaded", () => {
   Promise.all([loadCategories(), loadProducts()]);
   initializeProductsPage();
@@ -50,7 +48,7 @@ async function loadCategories() {
   try {
     const token = localStorage.getItem("token");
     const categoriesRes = await apiCall(
-      "http://localhost:8080/producto/categorias",
+      "https://marcus-barber.azurewebsites.net/producto/categorias",
       { headers: token ? { Authorization: `Bearer ${token}` } : {} }
     );
     const categories = categoriesRes.map((c) => c.categoria).filter(Boolean);
@@ -74,7 +72,7 @@ function populateCategorySelects(cats) {
       opt.dataset.dyn = "1";
       sel.appendChild(opt);
     });
-    if (i === 0) sel.value = ""; // «Todas las categorías»
+    if (i === 0) sel.value = "";
   });
 }
 
@@ -84,10 +82,21 @@ function initializeProductsPage() {
   document.getElementById("searchInput")?.addEventListener("input", debounce(filterProducts, 300));
   document.getElementById("categoryFilter")?.addEventListener("change", filterProducts);
   document.getElementById("stockFilter")?.addEventListener("change", filterProducts);
-  document.getElementById("prevPageBtn")?.addEventListener("click", () => currentPage > 0 && loadProducts(currentPage - 1));
-  document.getElementById("nextPageBtn")?.addEventListener("click", () => currentPage < totalPages - 1 && loadProducts(currentPage + 1));
 
-  // Previsualización de imágenes (principal, secundaria, terciaria)
+  document.getElementById("prevPageBtn")?.addEventListener("click", () => {
+    const pageToLoad = currentPage - 1;
+    if (pageToLoad >= 0) {
+      loadProducts(pageToLoad);
+    }
+  });
+
+  document.getElementById("nextPageBtn")?.addEventListener("click", () => {
+    const pageToLoad = currentPage + 1;
+    if (pageToLoad < totalPages) {
+      loadProducts(pageToLoad);
+    }
+  });
+
   ["1", "2", "3"].forEach((n) => {
     const fileInput = document.getElementById(`productImage${n}`);
     const preview = document.getElementById(`imagePreview${n}`);
@@ -110,6 +119,7 @@ function initializeProductsPage() {
 }
 
 async function loadProducts(page = 0) {
+
   try {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -127,13 +137,14 @@ async function loadProducts(page = 0) {
     if (categoria) qs.append("categoria", categoria);
     if (stock === "bajo" || stock === "sin") qs.append("stock", stock);
 
-    const data = await apiCall(`http://localhost:8080/admin/producto?${qs.toString()}`, {
+    const url = `https://marcus-barber.azurewebsites.net/admin/producto?${qs.toString()}`;
+
+    const data = await apiCall(url, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
     });
-
     currentPage = data.number;
     totalPages = data.totalPages;
 
@@ -158,8 +169,10 @@ function renderProducts() {
   if (!products.length) {
     tbody.innerHTML = "";
     empty.style.display = "block";
+    document.getElementById("pageIndicator").textContent = "";
     return;
   }
+
   empty.style.display = "none";
 
   tbody.innerHTML = products
@@ -181,18 +194,17 @@ function renderProducts() {
       </tr>`
     )
     .join("");
+
 }
 
 function updatePaginationControls() {
   const prevBtn = document.getElementById("prevPageBtn");
   const nextBtn = document.getElementById("nextPageBtn");
-  const paginationContainer = document.querySelector(".pagination-controls");
 
-  if (!prevBtn || !nextBtn || !paginationContainer) return;
+  if (!prevBtn || !nextBtn) return;
 
   prevBtn.style.display = currentPage <= 0 ? "none" : "inline-block";
   nextBtn.style.display = currentPage >= totalPages - 1 ? "none" : "inline-block";
-  paginationContainer.style.display = totalPages <= 1 ? "none" : "flex";
 }
 
 function filterProducts() {
@@ -244,7 +256,7 @@ async function handleProductSubmit(e) {
     precio: +fd.get("precio"),
     stock: +fd.get("stock"),
     descripcion: fd.get("descripcion") || "",
-    imagen: "/placeholder.svg", // Aquí deberías cambiarlo si usas Cloudinary
+    imagen: "/placeholder.svg",
   };
   const errs = validate(prod);
   if (Object.keys(errs).length) return showFormErrors(errs);
@@ -308,10 +320,15 @@ function openModal(id) {
   document.body.style.overflow = "hidden";
 }
 
-function closeModal(id) {
-  document.getElementById(id).classList.remove("show");
-  document.body.style.overflow = "";
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId)
+  if (modal) {
+    modal.classList.remove("show")
+    document.body.style.overflow = ""
+  }
 }
+
 
 window.editProduct = editProduct;
 window.deleteProduct = deleteProduct;

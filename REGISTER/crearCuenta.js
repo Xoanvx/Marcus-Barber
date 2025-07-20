@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         try {
-            const res = await fetch("http://localhost:8080/auth/crear", {
+            const res = await fetch("https://marcus-barber.azurewebsites.net/auth/crear", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body

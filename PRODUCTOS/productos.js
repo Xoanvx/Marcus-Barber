@@ -1,6 +1,6 @@
 // productos.js
 
-const API = "http://localhost:8080/producto";
+const API = "https://marcus-barber.azurewebsites.net/producto";
 const SIZE = 12;
 
 let page = 0;

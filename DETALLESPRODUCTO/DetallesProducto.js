@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    fetch(`http://localhost:8080/producto/${productId}`)
+    fetch(`https://marcus-barber.azurewebsites.net/producto/${productId}`)
         .then(res => {
             if (!res.ok) throw new Error("Error de red");
             return res.json();

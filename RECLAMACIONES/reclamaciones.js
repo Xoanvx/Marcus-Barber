@@ -43,7 +43,7 @@ document.getElementById("btnEnviarReclamo").addEventListener("click", function (
     btn.textContent = "Enviando...";
     btn.disabled = true;
 
-    fetch("http://localhost:8080/reclamo", {
+    fetch("https://marcus-barber.azurewebsites.net/reclamo", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

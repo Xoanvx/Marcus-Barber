@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-            const res = await fetch("http://localhost:8080/auth/login", {
+            const res = await fetch("https://marcus-barber.azurewebsites.net/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ correo, contrasena })
