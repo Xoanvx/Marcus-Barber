@@ -302,7 +302,7 @@ function processPayment() {
       cantidad: item.quantity
     }));
 
-    fetch("http://localhost:8080/pedido", {
+    fetch("https://marcus-barber.azurewebsites.net/pedido", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
